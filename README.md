@@ -1,0 +1,3 @@
+# Cryptogether
+
+license: MIT
