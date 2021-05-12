@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import logo from './images/logo.png'
 import { Navbar, Nav, NavDropdown, Form, Button, FormControl } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
@@ -30,7 +30,8 @@ class App extends Component {
       <main className="cryptogether">
         <header className="pl-10">
           <Navbar bg="dark" variant="dark" expand="sm">
-            <Navbar.Brand className="ml-10" href="/home">Cryptogether</Navbar.Brand>
+            <Navbar.Brand className="ml-10" href="/home">
+              <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether" /> Cryptogether</Navbar.Brand>
             <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

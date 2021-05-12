@@ -11,7 +11,7 @@ class CoinList extends Component {
 
   }
 
-  componentDidMount() {    
+  loadData = () => {
     const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=250`
     axios.get(url)
       .then(response => {
@@ -24,17 +24,14 @@ class CoinList extends Component {
       .catch((error) => {console.log("Something went wrong. ", error)})
   }
 
-  componentDidUpdate() {    
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=250`
-    axios.get(url)
-      .then(response => {
-        const data = response.data
-        this.setState({
-          coins: data,
-          loaded: true
-        })
-      })
-      .catch((error) => {console.log("Something went wrong. ", error)})
+  componentDidMount() {    
+    this.loadData()
+  }
+
+  componentDidUpdate(prevProps, prevState) {    
+    if (prevProps.currency !== this.props.currency) {
+      this.loadData()
+    }
   }
 
   render() {
