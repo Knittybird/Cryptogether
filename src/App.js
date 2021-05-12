@@ -18,7 +18,10 @@ class App extends Component {
   }
 
   selectCurrencyHandler = (currency) => {
-    this.setState = {currency}
+    this.setState({
+      currency: currency
+    })
+    console.log("Set currency to", currency)
   }
 
   render() {
@@ -28,7 +31,7 @@ class App extends Component {
         <header className="pl-10">
           <Navbar bg="dark" variant="dark" expand="sm">
             <Navbar.Brand className="ml-10" href="/home">Cloudly</Navbar.Brand>
-            <CurrencySelector currency={this.currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
+            <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="w-100 justify-content-end">
@@ -43,7 +46,7 @@ class App extends Component {
           <Switch>
             <Redirect exact from ="/" to="/home" />
             <Route path="/home">
-              <Dashboard />
+              <Dashboard currency={currency}/>
             </Route>
             <Route path="/coins">
               <Coins />
