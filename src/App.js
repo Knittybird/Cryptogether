@@ -27,10 +27,10 @@ class App extends Component {
   render() {
     const { currency } = this.state
     return (
-      <main className="cloudly">
+      <main className="cryptogether">
         <header className="pl-10">
           <Navbar bg="dark" variant="dark" expand="sm">
-            <Navbar.Brand className="ml-10" href="/home">Cloudly</Navbar.Brand>
+            <Navbar.Brand className="ml-10" href="/home">Cryptogether</Navbar.Brand>
             <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
