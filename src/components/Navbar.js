@@ -32,7 +32,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          <img height={60} src={logo} alt="Cryptogether" /> Cryptogether
+          <img src={logo} alt="Cryptogether" /> Cryptogether
         </Link>
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />

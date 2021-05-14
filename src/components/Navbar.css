@@ -17,7 +17,9 @@
   display: flex;
   align-items: center;
 }
-
+.navbar-logo img {
+  height: 50px;
+}
 .fa-firstdraft {
   margin-left: 0.5rem;
   font-size: 1.6rem;
@@ -69,6 +71,9 @@
     position: relative;
   }
 
+  .navbar-logo img {
+    height: 30px;
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
