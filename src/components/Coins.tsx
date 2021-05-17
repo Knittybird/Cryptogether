@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
-class Coins extends Component {
+interface CoinsProps {
+  currency: string
+}
+
+class Coins extends Component<CoinsProps> {
   constructor(props) {
     super(props)
   }

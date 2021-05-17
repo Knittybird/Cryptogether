@@ -9,15 +9,23 @@ import Dashboard from './components/Dashboard'
 import Coins from './components/Coins'
 import Exchanges from './components/Exchanges'
 
-class App extends Component {
-  constructor(){
-    super()
+
+interface AppProps {
+}
+
+interface AppState {
+  currency: string
+}
+
+class App extends Component<AppProps, AppState> {
+  constructor(props){
+    super(props)
     this.state = {
       currency: "usd"
     }
   }
 
-  selectCurrencyHandler = (currency) => {
+  selectCurrencyHandler = (currency: string) => {
     this.setState({
       currency: currency
     })
@@ -37,7 +45,7 @@ class App extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="w-100 justify-content-end">
                 <Nav.Link href="/home">Dashboard</Nav.Link>
-                <Nav.Link href="/coins" to="/coins">Coins</Nav.Link>
+                <Nav.Link href="/coins">Coins</Nav.Link>
                 <Nav.Link href="/exchanges">Exchanges</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -50,7 +58,7 @@ class App extends Component {
               <Dashboard currency={currency}/>
             </Route>
             <Route path="/coins">
-              <Coins />
+              <Coins currency={currency}/>
             </Route>
             <Route path="/exchanges">
               <Exchanges />

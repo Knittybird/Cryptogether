@@ -1,6 +1,11 @@
 import react, { Component } from 'react'
 
-class CurrencySelector extends Component {
+interface CurSelProps {
+  currency: string,
+  selectCurrencyHandler: (currency: string) => void
+}
+
+class CurrencySelector extends Component<CurSelProps> {
 
   render() {
   console.log("CurrencySelector render")

@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import Trending from './Trending'
 import CoinList from './CoinList'
 
-class Dashboard extends Component {
+interface DashProps {
+  currency: string
+}
+
+class Dashboard extends Component<DashProps> {
   constructor(props) {
     super(props)
   }
