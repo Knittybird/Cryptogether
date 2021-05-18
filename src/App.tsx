@@ -36,22 +36,22 @@ class App extends Component<AppProps, AppState> {
     const { currency } = this.state
     return (
       <main className="cryptogether">
-        <header className="pl-10">
-          <Navbar bg="dark" variant="dark" expand="sm">
-            <Navbar.Brand className="ml-10" href="/home">
-              <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether" /> Cryptogether</Navbar.Brand>
-            <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="w-100 justify-content-end">
-                <Nav.Link href="/home">Dashboard</Nav.Link>
-                <Nav.Link href="/coins">Coins</Nav.Link>
-                <Nav.Link href="/exchanges">Exchanges</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        </header>
         <BrowserRouter>
+          <header className="pl-10">
+            <Navbar bg="dark" variant="dark" expand="sm">
+              <Navbar.Brand className="ml-10" as={Link} to="/home">
+                <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether" /> Cryptogether</Navbar.Brand>
+              <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="w-100 justify-content-end">
+                  <Link className="nav-link" to="/home">Dashboard</Link>
+                  <Link className="nav-link" to="/coins">Coins</Link>
+                  <Link className="nav-link" to="/exchanges">Exchanges</Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+          </header>
           <Switch>
             <Redirect exact from ="/" to="/home" />
             <Route path="/home">
