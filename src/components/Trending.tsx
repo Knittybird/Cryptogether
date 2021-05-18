@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 
-class Trending extends Component {
+interface TrendingProps {
+  currency: string
+}
+
+class Trending extends Component<TrendingProps> {
   constructor(props) {
     super(props)
   }
