@@ -1,0 +1,49 @@
+.trending {
+  display: flex;
+  gap: 1em;
+  margin: 1em;
+  overflow-x: auto;
+}
+
+.trending-coin {
+  background: whitesmoke;
+  border-radius: 10px;
+  color: black;
+  position: relative;
+  padding: 1em 1em 1.5em 1em;
+  text-decoration: none;
+}
+
+.trending-coin:hover {
+  background: #eeeeee;
+  color: black;
+}
+
+.trending-coin .link {
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  left: 0;
+  opacity: 0.5;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.trending-coin .link a {
+  color: black;
+  text-decoration: none;
+}
+
+.trending-coin img {
+  margin: 0 0.5em 0.5em 0;
+  height: 100px;
+}
+
+.trending-coin .name {
+  font-weight: bold;
+}
+
+.trending-coin .symbol {
+  opacity: 0.5;
+}
