@@ -46,7 +46,6 @@ class Trending extends Component<TrendingProps, TrendingState> {
           trending: formattedList,
           loaded: true
         })
-        console.log(this.state.trending);
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
   }
@@ -57,7 +56,6 @@ class Trending extends Component<TrendingProps, TrendingState> {
 
   render() {
     const { loaded, trending } = this.state
-    console.log("In render method. Trending length is " + trending.length);
     if (loaded) {
       return (
         <div className="trending">

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import ColorNum from './ColorNum'
 import axios from 'axios'
+import './ExchangeList.css'
 
 const NUM_PER_PAGE = 50
 
@@ -34,7 +36,6 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
       exchanges: [],
       loaded: false,
     }
-
   }
 
   loadData = () => {
@@ -56,6 +57,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
 
   render() {
     const { loaded, exchanges } = this.state
+    console.log(this.props)
     if (loaded) {
       return (
         <>
@@ -75,15 +77,49 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
               </tr>
               {exchanges.map((exchange, i) => 
                 <tr key={i}>
-                  <th key={0}><img className="exchange-logo" src={exchange.image}/></th>
-                  <th key={1}>{exchange.name}</th>
-                  <th key={2}>{exchange.year_established}</th>
-                  <th key={3}>{exchange.country}</th>
-                  <th key={4}><a href={exchange.url}>URL</a></th>
-                  <th key={5}>{exchange.has_trading_incentive ? "yes" : "no"}</th>
-                  <th key={6}>{exchange.trust_score}</th>
-                  <th key={7}>{exchange.trust_score_rank}</th>
-                  <th key={8}>{exchange.trade_volume_24h_btc}</th>
+                  <th key={0}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      <img className="exchange-logo" src={exchange.image}/>
+                    </Link>
+                  </th>
+                  <th key={1}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.name}
+                    </Link>
+                  </th>
+                  <th key={2}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.year_established}
+                    </Link>
+                  </th>
+                  <th key={3}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.country}
+                    </Link>
+                  </th>
+                  <th key={4}>
+                    <a href={exchange.url}>URL</a>
+                  </th>
+                  <th key={5}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.has_trading_incentive ? "yes" : "no"}
+                    </Link>
+                  </th>
+                  <th key={6}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.trust_score}
+                    </Link>
+                  </th>
+                  <th key={7}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.trust_score_rank}
+                    </Link>
+                  </th>
+                  <th key={8}>
+                    <Link to={"/exchange/" + exchange.id}>
+                      {exchange.trade_volume_24h_btc}
+                    </Link>
+                  </th>
                 </tr>
               )}
             </tbody>
