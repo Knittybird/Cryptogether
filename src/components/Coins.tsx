@@ -11,6 +11,7 @@ class Coins extends Component<CoinsProps> {
 
   render() {
     const { currency } = this.props
+    
     return (
       <div className="coinsView">
         <p>Coins</p>
