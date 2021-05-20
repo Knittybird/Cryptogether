@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ExchangeList from './ExchangeList'
 
 class Exchanges extends Component {
   constructor(props) {
@@ -7,9 +8,7 @@ class Exchanges extends Component {
 
   render() {
     return (
-      <div className="dashboard">
-        <p>Exchange List</p>
-      </div>
+      <ExchangeList />
     )
   }
 }
