@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ColorNum from './ColorNum'
 import axios from 'axios'
 
 interface CoinListProps {
@@ -91,8 +92,12 @@ class CoinList extends Component<CoinListProps, CoinListState> {
               <td key={0}>{coin.symbol}</td>
               <td key={1}>{coin.name}</td>
               <td key={2}>{coin.current_price}</td>
-              <td key={3}>{coin.price_change_24h}</td>
-              <td key={4}>{coin.price_change_percentage_24h}</td>
+              <td key={3}>
+                <ColorNum value={coin.price_change_24h}/>
+              </td>
+              <td key={4}>
+                <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
+              </td>
               <td key={5}>{coin.total_volume}</td>
             </tr>
           )}
