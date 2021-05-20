@@ -15,7 +15,7 @@ class Dashboard extends Component<DashProps> {
     const { currency } = this.props
     return (
       <div className="dashboard">
-        <Trending currency={currency} />
+        <Trending />
         <CoinList currency={currency} />
       </div>
     )

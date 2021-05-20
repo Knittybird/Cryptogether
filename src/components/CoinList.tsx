@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ColorNum from './ColorNum'
 import axios from 'axios'
 
+const NUM_PER_PAGE = 50
+
 interface CoinListProps {
   currency: string
 }
@@ -51,7 +53,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=250`
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page={NUM_PER_PAGE}`
     axios.get(url)
       .then(response => {
         const data = response.data
@@ -75,36 +77,38 @@ class CoinList extends Component<CoinListProps, CoinListState> {
 
   render() {
     const { loaded, coins } = this.state
-    return (
-
-      <table className="coinList table">
-        <tbody>
-          <tr key={0}>
-            <th key={0}>Symbol</th>
-            <th key={1}>Name</th>
-            <th key={2}>Price</th>
-            <th key={3}>24h change</th>
-            <th key={4}>24h change %</th>
-            <th key={5}>Volume</th>
-          </tr>
-          {coins.map((coin, i) => 
-            <tr key={i+1}>
-              <td key={0}>{coin.symbol}</td>
-              <td key={1}>{coin.name}</td>
-              <td key={2}>{coin.current_price}</td>
-              <td key={3}>
-                <ColorNum value={coin.price_change_24h}/>
-              </td>
-              <td key={4}>
-                <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
-              </td>
-              <td key={5}>{coin.total_volume}</td>
+    if (loaded) {
+      return (
+        <table className="coinList table">
+          <tbody>
+            <tr key={0}>
+              <th key={0}>Symbol</th>
+              <th key={1}>Name</th>
+              <th key={2}>Price</th>
+              <th key={3}>24h change</th>
+              <th key={4}>24h change %</th>
+              <th key={5}>Volume</th>
             </tr>
-          )}
-        </tbody>
-      </table> 
-      
-    )
+            {coins.map((coin, i) => 
+              <tr key={i+1}>
+                <td key={0}>{coin.symbol.toUpperCase()}</td>
+                <td key={1}>{coin.name}</td>
+                <td key={2}>{coin.current_price}</td>
+                <td key={3}>
+                  <ColorNum value={coin.price_change_24h}/>
+                </td>
+                <td key={4}>
+                  <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
+                </td>
+                <td key={5}>{coin.total_volume}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      )
+    } else {
+      return <div className="loading"><h2>Loading</h2></div>
+    }
   }
 }
 
