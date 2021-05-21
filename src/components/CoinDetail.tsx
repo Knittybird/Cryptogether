@@ -9,25 +9,26 @@ interface CoinImage {
     small: string ;
     large: string ;
   }
+interface Coin {
+    id: string,
+    symbol: string,
+    name: string,
+    image: CoinImage | null,
+    description: string
+  }
   interface CoinState{
       coin : Coin;
       loaded: boolean;
   }
-  interface Coin {
-      id: string,
-      symbol: string,
-      name: string,
-      image: CoinImage | null,
-      description: string
-    }
+  
 export class CoinDetail extends Component<CoinDetailProps,CoinState> {
     constructor(props) {
         super(props)
     
         
-        const initial = {} as Coin;
+        const init = {} as Coin;
         this.state = {
-             coin : initial,
+             coin : init,
              loaded: false,
              
         }
@@ -59,12 +60,20 @@ export class CoinDetail extends Component<CoinDetailProps,CoinState> {
     render() 
     {
         const {loaded, coin} = this.state;
-        console.log("coin image:" + coin.image.small)
-        return (
-            <div>
-                <CoinIcon name={coin.name} symbol = {coin.symbol} image={coin.image.small} />
-            </div>
-        )
+        if (coin.image){
+            return (
+                <div>
+                    <CoinIcon name={coin.name} symbol = {coin.symbol} image={coin.image?.small} />
+                </div>
+            )
+        }else{
+            return (
+                <div>
+                    Loading
+                </div>
+            )
+        }
+        
     }
 }
 
