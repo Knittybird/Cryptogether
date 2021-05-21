@@ -63,8 +63,8 @@ class App extends Component<AppProps, AppState> {
             <Route path="/exchanges">
               <Exchanges />
             </Route>
-            <Route path="/coin/:id" component={Coin}>
-              
+            <Route path="/coin/:id" component={Coin} >
+              <Coin currency={currency} />
             </Route>
           </Switch>
         </BrowserRouter>
