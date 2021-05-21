@@ -9,7 +9,7 @@ interface CoinIconProps{
     
 }
 
-class CoinDetail extends Component<CoinIconProps> {
+class CoinIcon extends Component<CoinIconProps> {
     constructor(props) {
         super(props)
     
@@ -22,11 +22,11 @@ class CoinDetail extends Component<CoinIconProps> {
         return (
             <div className="coin-icon">
                 <div className="coin-name">{name}</div>
-                <div className="coin-symbol">{symbol}</div>
+                <div className="coin-symbol">{symbol.toUpperCase()}</div>
                 <div className="coin-image"><Img src= {image} /></div>
             </div>
         )
     }
 }
 
-export default CoinDetail
+export default CoinIcon
