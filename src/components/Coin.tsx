@@ -6,6 +6,7 @@ import CurrencySelector from './CurrencySelector';
 import CoinDetail from './CoinDetail'
 interface CoinProps {
   id: string;
+  currency: string;
 }
 class Coin extends Component<RouteComponentProps<CoinProps>> {
   constructor(props) {
@@ -14,6 +15,7 @@ class Coin extends Component<RouteComponentProps<CoinProps>> {
   }
   render() {
     const {id} = this.props.match.params;
+    const {currency} = this.props;
     return (
         
       <div className="coinView">
