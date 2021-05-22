@@ -7,7 +7,7 @@ import CurrencySelector from './components/CurrencySelector'
 import { BrowserRouter, Redirect, Switch, Route, Link } from 'react-router-dom'
 import Coins from './components/Coins'
 import Exchanges from './components/Exchanges'
-
+import Coin from './components/Coin';
 
 interface AppProps {
 }
@@ -57,6 +57,9 @@ class App extends Component<AppProps, AppState> {
             </Route>
             <Route path="/exchanges">
               <Exchanges />
+            </Route>
+            <Route path="/coin/:id" component={Coin} >
+              <Coin currency={currency} />
             </Route>
           </Switch>
         </BrowserRouter>

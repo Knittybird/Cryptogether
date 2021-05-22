@@ -13,6 +13,7 @@ class Coins extends Component<CoinsProps> {
 
   render() {
     const { currency } = this.props
+    
     return (
       <div className="coins">
         <h2>Coins</h2>
