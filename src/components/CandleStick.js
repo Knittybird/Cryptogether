@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
+import axios from "axios";
 import { testData } from "./testData";
 
-class CoinOHLC extends Component {
+class CoinCandlestick extends Component {
   constructor(props) {
     super(props);
 
@@ -11,6 +12,10 @@ class CoinOHLC extends Component {
         chart: {
           id: "candlestick",
           height: 350,
+          width: 600,
+        },
+        theme: {
+          mode: "dark",
         },
         title: {
           text: "CandleStick Chart",
@@ -24,34 +29,49 @@ class CoinOHLC extends Component {
             enabled: true,
           },
         },
+        plotOptions: {
+          candlestick: {
+            colors: {
+              upward: "#e8503a",
+              downward: "#17b861",
+            },
+          },
+        },
       },
       series: [
         {
-          data: [
-            [1621224000000, 46585.06, 46585.06, 44494.36, 44494.36],
-            [1621238400000, 43284.65, 44348.68, 42879.42, 44348.68],
-            [1621252800000, 45048.04, 45514.65, 44635.36, 44635.36],
-            [1621267200000, 45850.46, 45850.46, 44562.99, 44562.99],
-            [1621281600000, 43447.77, 43973.08, 42600.15, 43973.08],
-            [1621296000000, 44291.62, 44914.16, 42746.07, 42746.07],
-            [1621310400000, 43780.83, 45101.48, 43780.83, 45101.48],
-            [1621324800000, 44766.83, 45447.4, 44766.83, 44967.34],
-            [1621339200000, 45114.49, 45267.14, 44929.97, 45267.14],
-            [1621353600000, 45549.16, 45549.16, 43209.49, 43209.49],
-            [1621368000000, 43122.97, 43728.7, 42815.4, 42815.4],
-            [1621382400000, 43676.08, 43676.08, 43022.38, 43022.38],
-            [1621396800000, 43091.04, 43091.04, 40941.4, 40941.4],
-            [1621411200000, 40599.49, 40599.49, 39040.08, 39307.61],
-            [1621425600000, 40538.42, 40764.06, 39213.45, 39213.45],
-            [1621440000000, 38617.21, 38617.21, 36573.55, 38138.12],
-            [1621454400000, 39817.89, 39875.16, 38176.56, 38920.35],
-            [1621468800000, 39689.01, 39689.01, 37507.13, 39154.21],
-            [1621483200000, 38040.94, 38279.03, 37440.3, 38279.03],
-            [1621497600000, 39893.4, 40029.85, 39520.26, 40029.85],
-          ],
+          data: testData,
         },
       ],
+      loaded: false,
     };
+  }
+
+  loadData = () => {
+    console.log(this.props.currency);
+    const url = `https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=usd&days=7`;
+    axios
+      .get(url)
+      .then((response) => {
+        console.log(response.data);
+        const data = response.data;
+        this.setState({
+          series: [
+            {
+              data: data,
+            },
+          ],
+          loaded: true,
+        });
+        console.log(this.state);
+      })
+      .catch((error) => {
+        console.log("Something went wrong. ", error);
+      });
+  };
+
+  componentDidMount() {
+    this.loadData();
   }
 
   render() {
@@ -62,11 +82,12 @@ class CoinOHLC extends Component {
           options={this.state.options}
           series={this.state.series}
           type="candlestick"
-          width="500"
+          height="500"
+          width="700"
         />
       </div>
     );
   }
 }
 
-export default CoinOHLC;
+export default CoinCandlestick;
