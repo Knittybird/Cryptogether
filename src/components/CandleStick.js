@@ -3,6 +3,8 @@ import Chart from "react-apexcharts";
 import axios from "axios";
 import { testData } from "./testData";
 
+// CoinCadlestick takes a coin id and optionally a currancy. Currency defaults to usd.
+// chart displays 7 days worth of open, high, low, close data in 4hr incriments
 class CoinCandlestick extends Component {
   constructor(props) {
     super(props);
@@ -47,9 +49,13 @@ class CoinCandlestick extends Component {
     };
   }
 
+  static defaultProps = {
+    currency: "usd",
+  };
+
   loadData = () => {
     console.log(this.props.currency);
-    const url = `https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=usd&days=7`;
+    const url = `https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=${this.props.currency}&days=7`;
     axios
       .get(url)
       .then((response) => {
@@ -72,6 +78,12 @@ class CoinCandlestick extends Component {
 
   componentDidMount() {
     this.loadData();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.currency !== this.props.currency) {
+      this.loadData();
+    }
   }
 
   render() {
