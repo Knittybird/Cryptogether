@@ -1,5 +1,15 @@
 {
-  "name": "app",
+  "name": "Cryptogether",
+  "description": "Cryptocurrency dashboard",
+  "contributors": [
+    "Daniel Dupriest",
+    "Robin Gearn",
+    "Nhan Le"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Knittybird/Cryptogether"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
