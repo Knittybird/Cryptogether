@@ -1,14 +1,20 @@
 import React, { Component } from 'react'
-import {RouteComponentProps} from 'react-router'
+import {RouteComponentProps, withRouter} from 'react-router'
 import axios from 'axios';
-
 import CurrencySelector from './CurrencySelector';
 import CoinDetail from './CoinDetail'
-interface CoinProps {
-  id: string;
-  currency: string;
+
+
+type Props = {
+  currency: string
 }
-class Coin extends Component<RouteComponentProps<CoinProps>> {
+
+type ComposedProps = Props & RouteComponentProps<{
+  id: string
+}>
+
+
+class Coin extends Component<ComposedProps> {
   constructor(props) {
     super(props)
     
@@ -16,13 +22,15 @@ class Coin extends Component<RouteComponentProps<CoinProps>> {
   render() {
     const {id} = this.props.match.params;
     const {currency} = this.props;
+    console.log("currency:" + currency)
     return (
         
       <div className="coinView">
-        <CoinDetail id={id} />
+        <CoinDetail id={id} currency={currency} />
+        
       </div>
     )
   }
 }
 
-export default Coin
+export default withRouter(Coin)
