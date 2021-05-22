@@ -8,6 +8,7 @@ import { BrowserRouter, Redirect, Switch, Route, Link } from 'react-router-dom'
 import Dashboard from './components/Dashboard'
 import Coins from './components/Coins'
 import CoinOHLC from './components/CandleStick'
+import CoinCandlestick from './components/CandleStick'
 // import Exchanges from './components/Exchanges'
 
 
@@ -62,7 +63,7 @@ class App extends Component<AppProps, AppState> {
               <Coins currency={currency}/>
             </Route>
             <Route path="/exchanges">
-              <CoinOHLC />
+              <CoinCandlestick currency={currency} />
             </Route>
           </Switch>
         </BrowserRouter>
