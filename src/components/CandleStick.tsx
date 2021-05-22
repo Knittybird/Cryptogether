@@ -90,8 +90,8 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
             plotOptions: {
               candlestick: {
                 colors: {
-                  upward: "#e8503a",
-                  downward: "#17b861",
+                  upward: "#17b861",
+                  downward: "#e8503a",
                 },
               },
             },
