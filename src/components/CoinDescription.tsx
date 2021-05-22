@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import parse from 'html-react-parser'
 
 interface CoinDescriptionProps{
     name :string;
@@ -21,7 +22,7 @@ export class CoinDescription extends Component<CoinDescriptionProps> {
         return (
             <div>
                 <div className="description-title">Name: {name}</div>
-                <div className="description-content">Description: {description}</div>
+                <div className="description-content">Description: {parse(description)}</div>
             </div>
         )
     }
