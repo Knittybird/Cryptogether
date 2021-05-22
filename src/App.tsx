@@ -63,7 +63,7 @@ class App extends Component<AppProps, AppState> {
               <Coins currency={currency}/>
             </Route>
             <Route path="/exchanges">
-              <CoinCandlestick currency={currency} />
+              <CoinCandlestick currency={currency} id='bitcoin'/>
             </Route>
           </Switch>
         </BrowserRouter>
