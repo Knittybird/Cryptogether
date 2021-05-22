@@ -11,6 +11,7 @@ import axios from "axios";
  * Props: id:<string>  id of coin
  *        currancy:<string>  Optional currancy, defaults to usd. 
  *                           If default used, it is not changeable
+ * Will fill parent container
  */
 
 
@@ -42,7 +43,7 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
   };
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=${this.props.currency}&days=7`;
+    const url = `https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=${this.props.currency}&days=30`;
     axios
       .get(url)
       .then((response) => {
