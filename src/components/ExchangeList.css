@@ -1,0 +1,8 @@
+.exchangeList a {
+  color: black;
+  text-decoration: none;
+}
+
+.exchangeList img {
+  height: 25px;
+}
