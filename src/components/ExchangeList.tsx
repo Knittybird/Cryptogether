@@ -39,7 +39,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
   }
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/exchanges?per_page={NUM_PER_PAGE}`
+    const url = `https://api.coingecko.com/api/v3/exchanges?per_page=${NUM_PER_PAGE}`
     axios.get(url)
       .then(response => {
         const data = response.data
