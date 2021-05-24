@@ -84,9 +84,9 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                             <td key={1}>{<CoinName id={ticker.coin_id}/>}</td>
                             <td key={2}><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
                             <td key={3}><CoinPrice id={ticker.coin_id} currency={currency} /></td>
-                            <td key={4}>{ticker.bid_ask_spread_percentage}</td>
+                            <td key={4}>{ticker.bid_ask_spread_percentage * 100} %</td>
                             <td key={7}>${ticker.converted_volume.usd}</td>
-                            <td key={8}>{ticker.last_traded_at}</td>
+                            <td key={8}>{new Date(ticker.last_traded_at).toLocaleString()}</td>
                             <td key={9}>{ticker.trust_score}</td>
                         </tr>
                         )}
