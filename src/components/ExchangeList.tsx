@@ -57,7 +57,6 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
 
   render() {
     const { loaded, exchanges } = this.state
-    console.log(this.props)
     if (loaded) {
       return (
         <>
