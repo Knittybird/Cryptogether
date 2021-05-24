@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ColorNum from './ColorNum'
+import SimpleNum from './SimpleNum'
 import axios from 'axios'
 
 const NUM_PER_PAGE = 50
@@ -100,7 +101,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                 <td key={4}>
                   <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
                 </td>
-                <td key={5}>{coin.total_volume}</td>
+                <td key={5}><SimpleNum value={coin.total_volume} /></td>
               </tr>
             )}
           </tbody>
