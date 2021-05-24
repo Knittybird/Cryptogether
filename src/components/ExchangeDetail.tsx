@@ -30,7 +30,7 @@ interface Ticker{
     bid_ask_spread_percentage: number,
     last_traded_at: Date,
     trade_url: string,
-    coid_id: string,
+    coin_id: string,
     target_coin_id: string
 }
 interface Image{
@@ -115,13 +115,11 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     render() {
         const {id, currency} = this.props;
         const {exchange, loaded} = this.state;
-        //console.log(exchange.tickers[0].converted_volume.xrp);
-        //console.log(exchange.status_updates)
         if(loaded) {
             return (
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
-                    <ExchangeTable id={id} currency={currency}/>
+                    <ExchangeTable tickers={exchange.tickers} currency={currency} />
                     <ExchangeStatusUpdate status_updates={exchange.status_updates} />
                 </div>
             )
