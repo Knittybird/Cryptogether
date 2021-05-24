@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+const NUM_PER_PAGE = 50
 interface CoinNameProps{
     id:string,
     currency:string
@@ -38,7 +39,7 @@ export class CoinName extends Component<CoinNameProps, CoinNameState> {
     }
     loadData = () => {
         const {id} = this.props;
-        const url = `https://api.coingecko.com/api/v3/coins/${id}`;
+        const url = `https://api.coingecko.com/api/v3/coins/${id}?per_page=${NUM_PER_PAGE}`;
         
         axios.get(url)
           .then(response => {
