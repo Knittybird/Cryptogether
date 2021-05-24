@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import CoinName from './CoinName';
+
 import axios from 'axios'
-import CoinPrice from './CoinPrice';
+
 const NUM_PER_PAGE = 50
 interface ExchangeTableProps{
     tickers: Ticker[],
@@ -71,7 +71,7 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                         <th key={0}>#</th>
                         <th key={1}>Coin</th>
                         <th key={2}>Pair</th>
-                        <th key={3}>Price</th>
+                        <th key={3}>Last Price</th>
                         <th key={4}>Spread</th>
                         
                         <th key={7}>24h Volume</th>
@@ -81,11 +81,9 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                         {tickers.map((ticker, i) => 
                         <tr key={i+1}>
                             <td key={0}>{i+1}</td>
-                            <td key={1}>{<CoinName id={ticker.coin_id}/>}</td>
-                            {/* <td key={1}><Link className="base-coin" to={"/coin/" + ticker.coin_id}>{ticker.base}</Link></td> */}
+                            <td key={1}><Link className="base-coin" to={"/coin/" + ticker.coin_id}>{ticker.base}</Link></td>
                             <td key={2}><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
-                            <td key={3}><CoinPrice id={ticker.coin_id} currency={currency} /></td>
-                            {/* <td key={3}>{ticker.last}</td> */}
+                            <td key={3}>${ticker.last}</td>
                             <td key={4}>{ticker.bid_ask_spread_percentage * 100} %</td>
                             <td key={7}>${ticker.converted_volume.usd}</td>
                             <td key={8}>{new Date(ticker.last_traded_at).toLocaleString()}</td>
