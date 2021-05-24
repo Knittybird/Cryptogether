@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import CoinName from './CoinName';
 import axios from 'axios'
 import CoinPrice from './CoinPrice';
+const NUM_PER_PAGE = 50
 interface ExchangeTableProps{
     id:string,
     currency:string
@@ -49,7 +50,7 @@ export class ExchangeTable extends Component<ExchangeTableProps,ExchangeTableSta
     }
     loadData = () => {
         const {id,currency} = this.props;
-        const url = `https://api.coingecko.com/api/v3/exchanges/${id}/tickers?depth=true`;
+        const url = `https://api.coingecko.com/api/v3/exchanges/${id}/tickers?depth=true&per_page=${NUM_PER_PAGE}`;
         
         axios.get(url)
           .then(response => {
@@ -112,7 +113,7 @@ export class ExchangeTable extends Component<ExchangeTableProps,ExchangeTableSta
                         {tickers.map((ticker, i) => 
                         <tr key={i+1}>
                             <td key={0}>{i+1}</td>
-                            <td key={1}></td>
+                            
                             <td key={1}><CoinName id={ticker.coin_id} currency={currency} /></td>
                             <td key={2}><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
                             <td key={3}><CoinPrice id={ticker.coin_id} currency={currency} /></td>
