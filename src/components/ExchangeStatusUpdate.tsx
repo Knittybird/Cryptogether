@@ -36,7 +36,6 @@ export class ExchangeStatusUpdate extends Component<ExchangeStatusUpdateProps> {
     
     render() {
         const {status_updates} = this.props;
-        console.log(status_updates)
         return (
             <div> News:
                 {status_updates.map((status, i) => 
