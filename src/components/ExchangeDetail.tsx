@@ -3,6 +3,7 @@ import axios from 'axios'
 import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
+const NUM_PER_PAGE = 50
 interface ExchangeDetailProps{
     id:string,
     currency:string,
@@ -88,7 +89,7 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     
     loadData = () => {
         const {id,currency} = this.props;
-        const url = `https://api.coingecko.com/api/v3/exchanges/${id}`;
+        const url = `https://api.coingecko.com/api/v3/exchanges/${id}?per_page=${NUM_PER_PAGE}`;
         
         axios.get(url)
           .then(response => {
