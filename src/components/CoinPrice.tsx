@@ -75,9 +75,9 @@ export class CoinPrice extends Component<CoinPriceProps, CoinPriceState> {
       }
     render() {
         const {coin, loaded} = this.state;
-        //console.log(coin)
+        
 
-        if(loaded){
+        if(loaded && coin){
             return (
                 <div>
                     {coin.current_price}
