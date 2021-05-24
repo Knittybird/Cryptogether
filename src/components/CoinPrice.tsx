@@ -33,9 +33,15 @@ interface Coin {
     roi: string,
     last_updated: Date
   }
+  interface Currency{
+      currencyName: string,
+      currencySymbol:string,
+      id: string
+  }
   interface CoinPriceState{
       coin:Coin,
       loaded:boolean
+
   }
 export class CoinPrice extends Component<CoinPriceProps, CoinPriceState> {
     constructor(props) {
@@ -51,11 +57,11 @@ export class CoinPrice extends Component<CoinPriceProps, CoinPriceState> {
         const {id, currency} = this.props;
         
         const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${id}&per_page=${NUM_PER_PAGE}`;
-        console.log(url);
+        
         axios.get(url)
           .then(response => {
             const data = response.data[0]
-            console.log(data);
+            
             this.setState({
               coin: data,
               loaded: true
@@ -75,14 +81,29 @@ export class CoinPrice extends Component<CoinPriceProps, CoinPriceState> {
       }
     render() {
         const {coin, loaded} = this.state;
-        
+        const {currency} = this.props;
 
         if(loaded && coin){
-            return (
-                <div>
-                    {coin.current_price}
-                </div>
-            )
+            if(currency === 'usd'){
+                return (
+                    <div>
+                        ${coin.current_price}
+                    </div>
+                )
+            }else if (currency === 'eur'){
+                return (
+                    <div>
+                        €{coin.current_price}
+                    </div>
+                )
+            }else if(currency ==='jpy'){
+                return (
+                    <div>
+                        ¥{coin.current_price}
+                    </div>
+                )
+            }
+            
         }else{
             return (
                 <div>
