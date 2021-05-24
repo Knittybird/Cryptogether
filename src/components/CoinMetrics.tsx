@@ -54,7 +54,7 @@ export class CoinMetrics extends Component<CoinMetricsProps,CoinMetricsState> {
         axios.get(url)
           .then(response => {
             const data = response.data[0]
-            //console.log(data.market_data.current_price.usd)
+            
             this.setState({
               coin: data,
               loaded: true
