@@ -3,8 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 const NUM_PER_PAGE = 50
 interface CoinNameProps{
-    id:string,
-    currency:string
+    id:string
 }
 interface CoinImage {
     thumb: string ;
@@ -62,7 +61,7 @@ export class CoinName extends Component<CoinNameProps, CoinNameState> {
         }
       }
     render() {
-        const {id,currency} = this.props;
+        const {id} = this.props;
         const {coin, loaded} = this.state;
         
         if(coin.image){
