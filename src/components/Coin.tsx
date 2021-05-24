@@ -22,7 +22,7 @@ class Coin extends Component<ComposedProps> {
   render() {
     const {id} = this.props.match.params;
     const {currency} = this.props;
-    console.log("currency:" + currency)
+    
     return (
         
       <div className="coinView">
