@@ -53,7 +53,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page={NUM_PER_PAGE}`
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=${NUM_PER_PAGE}`
     axios.get(url)
       .then(response => {
         const data = response.data
