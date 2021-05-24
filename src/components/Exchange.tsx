@@ -3,6 +3,7 @@ import {RouteComponentProps, withRouter} from 'react-router'
 import axios from 'axios';
 import CurrencySelector from './CurrencySelector';
 import CoinDetail from './CoinDetail'
+import ExchangeDetail from './ExchangeDetail';
 
 
 type Props = {
@@ -14,7 +15,7 @@ type ComposedProps = Props & RouteComponentProps<{
 }>
 
 
-class Coin extends Component<ComposedProps> {
+class Exchange extends Component<ComposedProps> {
   constructor(props) {
     super(props)
     
@@ -25,12 +26,12 @@ class Coin extends Component<ComposedProps> {
     
     return (
         
-      <div className="coinView">
-        <CoinDetail id={id} currency={currency} />
+      <div className="exchange-view">
+        <ExchangeDetail id={id} currency={currency} />
         
       </div>
     )
   }
 }
 
-export default withRouter(Coin)
+export default withRouter(Exchange)

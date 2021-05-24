@@ -49,7 +49,7 @@ export class CoinDetail extends Component<CoinDetailProps,CoinState> {
         axios.get(url)
           .then(response => {
             const data = response.data
-            console.log(data.description)
+            
             this.setState({
               coin: data,
               loaded: true
