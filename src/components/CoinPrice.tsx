@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+const NUM_PER_PAGE = 50
 interface CoinPriceProps{
     id:string,
     currency:string
@@ -48,7 +49,8 @@ export class CoinPrice extends Component<CoinPriceProps, CoinPriceState> {
     }
     loadData = () => {
         const {id, currency} = this.props;
-        const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${id}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
+        
+        const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${id}&per_page=${NUM_PER_PAGE}`;
         console.log(url);
         axios.get(url)
           .then(response => {
