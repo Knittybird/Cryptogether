@@ -78,8 +78,8 @@ export class CoinDetail extends Component<CoinDetailProps,CoinState> {
                 <div className="coin-detail-container">
                     <div className="link"><a>Data </a> &gt; <a>{coin.id}</a></div>
                     <CoinIcon name={coin.name} symbol = {coin.symbol} image={coin.image?.small} />
-                    <CoinCandlestick id={id} currency={currency} />
                     <CoinMarket id={id} currency={currency}  />
+                    <CoinCandlestick id={id} currency={currency} />
                     <CoinMetrics id={id} currency={currency}  />
                     <CoinDescription name={coin.name} description={coin.description.en} />
                 </div>
