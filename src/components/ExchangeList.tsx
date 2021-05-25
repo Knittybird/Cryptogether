@@ -26,6 +26,7 @@ interface Exchange {
 
 interface ExchangeListState {
   exchanges: Exchange[], 
+  volume_series: string[]
   loaded: boolean
 }
 
@@ -34,8 +35,14 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     super(props)
     this.state = {
       exchanges: [],
+      volume_series: [],
       loaded: false,
     }
+  }
+
+  get_volume = (exchanges:[]) => {
+    let volume:ApexAxisChartSeries = []
+    
   }
 
   loadData = () => {
@@ -45,10 +52,15 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
         const data = response.data
         this.setState({
           exchanges: data,
-          loaded: true
+          loaded: true,
+          volume_series: get_volume(data.slice[0,3])
         })
+        console.log(this.state.exchanges.slice(0,3))
+        this.state.exchanges.slice(0,3).forEach (exc => ( this.state.volume_series.push(exc.name)) )
+        console.log(this.state.volume_series)
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
+      
   }
 
   componentDidMount() {    
@@ -60,6 +72,9 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     if (loaded) {
       return (
         <>
+        <div>
+          <p>{this.state.volume_series[0]}, {this.state.volume_series[1]}, {this.state.volume_series[2]}</p>
+        </div>
           <h3>Exchanges</h3>
           <table className="exchangeList table">
             <tbody>
