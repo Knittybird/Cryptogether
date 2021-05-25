@@ -11,6 +11,7 @@ import axios from "axios";
  * Props: id:<string>  id of coin
  *        currancy:<string>  Optional currancy, defaults to usd. 
  *                           If default used, it is not changeable
+ *        title:<string>     Optional title, Default no title
  * Will fill parent container
  */
 
@@ -18,6 +19,7 @@ import axios from "axios";
 interface CoinCandlestickProps { 
   currency?: string,
   id: string
+  title?: string
 }
 
 interface CandlestickState {
@@ -37,10 +39,17 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
       }],
       options: {
         chart: {type:'candlestick'},
-        // title: {
-        //   text: "CandleStick Chart",
-        //   align: "left",
-        // },
+        title: {
+          text: this.props.title,
+          align: "left",
+          offsetY: 11,
+          offsetX: 8,
+          style: {
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            color: '#d7ecff',
+          }
+        },
         grid: {
           borderColor: '#8cc8ff'  // bright
         },
