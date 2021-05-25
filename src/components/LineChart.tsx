@@ -6,42 +6,12 @@ import { ApexOptions } from "apexcharts";
 
 /**
  * LineChart: Line Chart Component
- * Props:
+ * Props:  Data<[timstamp, number][]  array of data to be displayed
+ *         title <string>   Optional default is no title displayed
+ *         name <string>    Optional name of line to be desplayed on hover tooltip
  */
 
-// const opt:ApexOptions = {
 
-//         chart: {
-//           height: 350,
-//           type: 'line',
-//           zoom: {
-//             enabled: false
-//           },
-//           foreColor: '#666',
-            
-//         },
-//         dataLabels: {
-//           enabled: false
-//         },
-//         grid: {
-//           // borderColor:'#8cc8ff'
-//           column: {
-//           colors: ['#00FF00']
-//         },
-//         stroke: {
-//           curve: 'straight'
-//         },
-//         title: {
-//           text: 'Volume1',
-//           align: 'left'
-//         },
-//         xaxis: {
-//           type: 'datetime',
-//         },
-//         // tooltip: {
-//         //   theme: 'dark',
-//         // }
-// }
 
 interface LineChartProps{
   data: any,
