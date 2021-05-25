@@ -1,22 +1,22 @@
 .trending {
   display: flex;
   gap: 1em;
-  margin: 1em;
-  overflow-x: auto;
+  margin: 0 0 1em 0;
+  overflow-x: hidden;
 }
 
 .trending-coin {
-  background: whitesmoke;
+  background: var(--dark);
   border-radius: 10px;
-  color: black;
+  color: var(--brighter);
   position: relative;
   padding: 1em 1em 1.5em 1em;
   text-decoration: none;
 }
 
 .trending-coin:hover {
-  background: #eeeeee;
-  color: black;
+  background: var(--neutral);
+  color: var(--brighter);
 }
 
 .trending-coin .link {
