@@ -38,7 +38,7 @@ class App extends Component<AppProps, AppState> {
       <main className="cryptogether">
         <BrowserRouter>
           <header className="pl-10">
-            <Navbar bg="dark" variant="dark" expand="sm">
+            <Navbar variant="dark" className="navbar-custom" expand="sm">
               <Navbar.Brand className="ml-10" as={Link} to="/coins">
                 <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether" /> Cryptogether</Navbar.Brand>
               <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
