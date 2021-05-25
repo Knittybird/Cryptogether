@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts"
-import ApexOptions from "apexcharts"
+import { ApexOptions } from "apexcharts"
 import axios from "axios";
 
 
@@ -23,6 +23,7 @@ interface CoinCandlestickProps {
 interface CandlestickState {
   // options: ApexOptions,
   series: ApexAxisChartSeries,
+  options: ApexOptions
   loaded: boolean
 }
 
@@ -34,6 +35,43 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
       series: [{
         data: []
       }],
+      options: {
+        chart: {type:'candlestick'},
+        // title: {
+        //   text: "CandleStick Chart",
+        //   align: "left",
+        // },
+        grid: {
+          borderColor: '#8cc8ff'  // bright
+        },
+        plotOptions: {
+          candlestick: {
+            colors: {
+              upward: "#00dd00",  // bright green
+              downward: "#ff3333",  // red
+            },
+          },
+        },
+        tooltip: {
+          theme: 'dark'
+        },
+        xaxis: {
+          type: 'datetime',
+          labels: {
+            style: {
+              colors: '#d7ecff'  // brighter
+            }
+          }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: '#d7ecff'  // brighter
+            }
+          }
+        }
+      },
+      
       loaded: false
     };
   }
@@ -76,26 +114,7 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
     return (
       <div className="candlestick">
         <Chart
-          // options={this.state.option}
-          options={{
-            chart: {type:'candlestick'},
-            // title: {
-            //   text: "CandleStick Chart",
-            //   align: "left",
-            // },
-            theme:{mode: 'dark',},
-            xaxis: {
-              type: "datetime",
-            },
-            plotOptions: {
-              candlestick: {
-                colors: {
-                  upward: "#17b861",
-                  downward: "#e8503a",
-                },
-              },
-            },
-          }}
+          options={this.state.options}
           series={this.state.series}
           type="candlestick"
         />
