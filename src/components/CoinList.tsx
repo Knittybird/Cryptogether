@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ColorNum from './ColorNum'
 import SimpleNum from './SimpleNum'
 import axios from 'axios'
+import './CoinList.css'
 
 const NUM_PER_PAGE = 50
 
@@ -92,7 +93,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
             </tr>
             {coins.map((coin, i) => 
               <tr key={i+1}>
-                <td key={0}>{coin.symbol.toUpperCase()}</td>
+                <td key={0} className="symbol">{coin.symbol.toUpperCase()}</td>
                 <td key={1}>{coin.name}</td>
                 <td key={2}>{coin.current_price}</td>
                 <td key={3}>

@@ -1,0 +1,24 @@
+.coinList {
+  background: var(--dark);
+  border-radius: 10px;
+}
+
+.coinList th {
+  color: var(--bright);
+}
+
+.coinList td {
+  color: var(--brighter);
+}
+
+.coinList tr {
+  border-color: var(--neutral);
+}
+
+.coinList tr:hover {
+  background: var(--neutral);
+}
+
+.coinList .symbol {
+  font-weight: bold;
+}

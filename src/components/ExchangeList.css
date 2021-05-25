@@ -1,8 +1,34 @@
+.exchangeList img {
+  height: 25px;
+}
+
+.exchangeList {
+  background: var(--dark);
+  border-radius: 10px;
+}
+
 .exchangeList a {
-  color: black;
+  color: var(--brighter);
+  font-weight: normal;
   text-decoration: none;
 }
 
-.exchangeList img {
-  height: 25px;
+.exchangeList th {
+  color: var(--bright);
+}
+
+.exchangeList td {
+  color: var(--brighter);
+}
+
+.exchangeList tr {
+  border-color: var(--neutral);
+}
+
+.exchangeList tr:hover {
+  background: var(--neutral);
+}
+
+.exchangeList .symbol {
+  font-weight: bold;
 }

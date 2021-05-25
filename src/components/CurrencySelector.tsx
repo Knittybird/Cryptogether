@@ -1,4 +1,5 @@
 import react, { Component } from 'react'
+import './CurrencySelector.css'
 
 interface CurSelProps {
   currency: string,
@@ -12,9 +13,9 @@ class CurrencySelector extends Component<CurSelProps> {
     const { currency, selectCurrencyHandler } = this.props
       return (
         <form>
-          <select id="currencySelect" name="currency" value={currency} onChange={(e) => selectCurrencyHandler(e.target.value)}>
+          <select id="currencySelect" className="form-select form-select-sm" name="currency" value={currency} onChange={(e) => selectCurrencyHandler(e.target.value)}>
             {currencies.map((x, i) => {
-              return <option key={i} value={x}>{x}</option>
+              return <option className="currency-item" key={i} value={x}>{x}</option>
             })}
           </select>
         </form>

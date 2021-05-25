@@ -60,7 +60,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     if (loaded) {
       return (
         <>
-          <h2>Exchanges</h2>
+          <h3>Exchanges</h3>
           <table className="exchangeList table">
             <tbody>
               <tr key={0}>
