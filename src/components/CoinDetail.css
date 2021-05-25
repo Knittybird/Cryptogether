@@ -118,6 +118,9 @@
     font-size: 1.2em;
     background: var(--dark);
   }
+  .candlestick {
+    padding: 1em;
+  }
 }
 
 @media (min-width: 768px) {
