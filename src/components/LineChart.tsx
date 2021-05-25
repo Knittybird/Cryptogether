@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
-import exchange_volume from "../../test_data/Exchange_volume"  
 
 /**
  * LineChart: Line Chart Component
@@ -35,23 +34,24 @@ const opt:ApexOptions = {
 }
 
 interface LineChartProps{
+  data: any,
+  title?: string
 
 }
 
-interface LineChartState {
+type LineChartState = {
   series: ApexAxisChartSeries,
   options: ApexOptions
 }
 
 
-class LineChart extends Component<LineChartState> {
+class LineChart extends React.Component<LineChartProps, LineChartState> {
   constructor(props) {
     super(props);
 
     this.state = {
       series: [{
-          name: "volume",
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+          data: this.props.data,
       }],
       options: {
         xaxis: {
@@ -68,10 +68,12 @@ class LineChart extends Component<LineChartState> {
       return (
 
         <div id="chart">
-          <Chart options={opt} 
+          <Chart options={this.state.options} 
             series={this.state.series} type="line" height={350} 
           />
         </div>
       );
     }
   }
+
+  export default LineChart

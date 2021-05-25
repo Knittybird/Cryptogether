@@ -3,6 +3,11 @@ import axios from 'axios'
 import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
+import { getLineAndCharacterOfPosition } from 'typescript';
+import { exchangeTestData} from '../test_data/Exchange_volume_data'
+import LineChart from './LineChart'
+import { Jumbotron } from 'react-bootstrap'
+
 const NUM_PER_PAGE = 50
 interface ExchangeDetailProps{
     id:string,
@@ -117,11 +122,16 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
         const {exchange, loaded} = this.state;
         if(loaded) {
             return (
+                <>
+                <Jumbotron>
+                    <LineChart data={exchangeTestData} />
+                </Jumbotron>
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
                     <ExchangeTable tickers={exchange.tickers} currency={currency} />
                     <ExchangeStatusUpdate status_updates={exchange.status_updates} />
                 </div>
+                </>
             )
         }else{
             return (<div>Loading</div>)
