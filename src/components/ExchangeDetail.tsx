@@ -4,7 +4,6 @@ import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
 import { getLineAndCharacterOfPosition } from 'typescript';
-import { exchangeTestData} from '../test_data/Exchange_volume_data'
 import LineChart from './LineChart'
 import { Jumbotron } from 'react-bootstrap'
 
@@ -79,6 +78,7 @@ interface Exchange{
 interface ExchangeDetailState{
     loaded: boolean,
     exchange: Exchange;
+    volume: [number, number][]
 }
 
 export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetailState> {
@@ -88,13 +88,15 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
         const init = {} as Exchange;
         this.state = {
              loaded: false,
-             exchange: init
+             exchange: init,
+             volume: []
         }
     }
     
     loadData = () => {
         const {id,currency} = this.props;
         const url = `https://api.coingecko.com/api/v3/exchanges/${id}?per_page=${NUM_PER_PAGE}`;
+        const volume_url = `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=7`;
         
         axios.get(url)
           .then(response => {
@@ -106,7 +108,20 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
             })
           })
           .catch((error) => {console.log("Something went wrong. ", error)})
-      }
+        
+        //   get volume data and format for chart
+        axios.get(volume_url)
+          .then(response => {
+            const v_data = response.data.map((item) => [item[0], parseInt(item[1])])
+            this.setState({
+              volume: v_data
+            })
+            console.log(this.state.volume)
+          })
+          .catch((error) => {console.log("Something went wrong. ", error)})
+        
+    }
+      
       componentDidMount() {    
         this.loadData();
       }
@@ -119,12 +134,12 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
 
     render() {
         const {id, currency} = this.props;
-        const {exchange, loaded} = this.state;
+        const {exchange, loaded, volume} = this.state;
         if(loaded) {
             return (
                 <>
                 <Jumbotron>
-                    <LineChart data={exchangeTestData} name={exchange.name}/>
+                    <LineChart data={volume} name={exchange.name}/>
                 </Jumbotron>
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
