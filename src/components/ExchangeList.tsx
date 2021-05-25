@@ -3,6 +3,11 @@ import { Link, useHistory } from 'react-router-dom'
 import ColorNum from './ColorNum'
 import axios from 'axios'
 import './ExchangeList.css'
+import { Jumbotron } from 'react-bootstrap';
+import LineChart from './LineChart';
+import { kraken_volume } from '../test_data/kraken_volume'
+import { gdax_volume } from '../test_data/gdax_volume'
+import { binance_volume }  from '../test_data/binance_volume'
 
 const NUM_PER_PAGE = 50
 
@@ -26,7 +31,7 @@ interface Exchange {
 
 interface ExchangeListState {
   exchanges: Exchange[], 
-  volume_series: string[]
+  volume_series: ApexAxisChartSeries,
   loaded: boolean
 }
 
@@ -40,10 +45,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     }
   }
 
-  get_volume = (exchanges:[]) => {
-    let volume:ApexAxisChartSeries = []
-    
-  }
+ d
 
   loadData = () => {
     const url = `https://api.coingecko.com/api/v3/exchanges?per_page=${NUM_PER_PAGE}`
@@ -53,11 +55,21 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
         this.setState({
           exchanges: data,
           loaded: true,
-          volume_series: get_volume(data.slice[0,3])
+          volume_series: [
+            {
+              data: binance_volume,
+              name:   'Binance',
+            },
+            {
+              data: gdax_volume,
+              name: 'Coinbase'
+            },
+            {
+              data: kraken_volume,
+              name: 'Kraken'
+            }
+          ],
         })
-        console.log(this.state.exchanges.slice(0,3))
-        this.state.exchanges.slice(0,3).forEach (exc => ( this.state.volume_series.push(exc.name)) )
-        console.log(this.state.volume_series)
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
       
@@ -68,13 +80,13 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
   }
 
   render() {
-    const { loaded, exchanges } = this.state
+    const { loaded, exchanges, volume_series} = this.state
     if (loaded) {
       return (
         <>
-        <div>
-          <p>{this.state.volume_series[0]}, {this.state.volume_series[1]}, {this.state.volume_series[2]}</p>
-        </div>
+          <Jumbotron>
+              <LineChart series={volume_series} />
+          </Jumbotron>
           <h3>Exchanges</h3>
           <table className="exchangeList table">
             <tbody>
