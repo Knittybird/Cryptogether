@@ -1,0 +1,119 @@
+.coin-detail-container {
+  font-size: 16px;
+}
+.coin-icon-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  font-size: 1.5em;
+
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+.coin-detail-container .link {
+  padding-top: 1em;
+  padding-left: 0.7em;
+}
+.coin-detail-container .link a {
+  color: var(--bright);
+}
+.coin-detail-container .link a:hover {
+  color: var(--highlight);
+}
+.coin-icon-container .coin-icon-image {
+  padding-left: 0.5em;
+}
+.coin-icon-container .coin-icon-name {
+  font-weight: 700;
+  font-size: 1.4em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  align-self: flex-end;
+}
+.coin-icon-container .coin-icon-symbol {
+  align-self: flex-end;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  padding-top: 0.4em;
+}
+.coin-icon-container .coin-icon-image img {
+  width: 2.2em;
+}
+.coin-market {
+  padding: 1em;
+}
+.coin-market .coin-market-title {
+  font-weight: 700;
+  font-size: 1.3em;
+}
+.coin-market-container {
+  font-size: 16px;
+  display: flex;
+  padding: 1em;
+  background-color: var(--dark);
+}
+.coin-market-container .container1 {
+  width: 50%;
+}
+.coin-market-container .container1 .price {
+  padding: 0.6em;
+}
+.coin-market-container .container2 .market-cap {
+  padding: 0.6em;
+}
+.coin-market-container .container1 .h-change {
+  padding: 0.6em;
+}
+.coin-market-container .container2 .volume {
+  padding: 0.6em;
+}
+.coin-market-container .container2 {
+  width: 50%;
+}
+.coin-market-container .value {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.coin-key-metrics {
+  padding: 1em;
+}
+
+.coin-key-metrics .metrics-title {
+  border-bottom: var(--bright) solid 1pt;
+  padding-bottom: 0.8em;
+  padding-top: 0.6em;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+.coin-key-metrics .metrics-container {
+  background: var(--dark);
+}
+.coin-key-metrics .metrics-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.coin-key-metrics .metrics-container table td {
+  border-bottom: var(--bright) solid 1pt;
+  padding-top: 1.4em;
+  padding-bottom: 1.4em;
+  padding-left: 0.4em;
+}
+.coin-key-metrics .metrics-container table td .value {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.coin-description-container {
+  padding: 1em;
+}
+.coin-description-container .title {
+  border-bottom: var(--brighter) solid 1pt;
+  padding-bottom: 0.7em;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+.coin-description-container .content {
+  padding-top: 0.7em;
+  font-size: 1.2em;
+  background: var(--dark);
+}
