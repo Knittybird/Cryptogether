@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-// import ApexCharts from "apexcharts";
+import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
 import exchange_volume from "../../test_data/Exchange_volume"  
 
@@ -10,22 +10,8 @@ import exchange_volume from "../../test_data/Exchange_volume"
  * Props:
  */
 
+const opt:ApexOptions = {
 
-interface LineChartProps{
-
-}
-
-
-class LineChart extends Component<ApexOptions, ApexCharts> {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // series: [{
-      //     name: "volume",
-      //     data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-      // }],
-      options: {
         chart: {
           height: 350,
           type: 'line',
@@ -46,8 +32,32 @@ class LineChart extends Component<ApexOptions, ApexCharts> {
         xaxis: {
           type: 'datetime',
         }
-      },
-    
+}
+
+interface LineChartProps{
+
+}
+
+interface LineChartState {
+  series: ApexAxisChartSeries,
+  options: ApexOptions
+}
+
+
+class LineChart extends Component<LineChartState> {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      series: [{
+          name: "volume",
+          data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+      }],
+      options: {
+        xaxis: {
+          type: 'datetime',
+        }
+      }
     
     };
   }
@@ -58,7 +68,7 @@ class LineChart extends Component<ApexOptions, ApexCharts> {
       return (
 
         <div id="chart">
-          <Chart options={this.state.options} 
+          <Chart options={opt} 
             series={this.state.series} type="line" height={350} 
           />
         </div>
