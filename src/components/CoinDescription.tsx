@@ -17,12 +17,20 @@ export class CoinDescription extends Component<CoinDescriptionProps> {
     
     render() {
         const {name,description} = this.props;
-        return (
-            <div className="coin-description-container">
-                <div className="title">About {name}</div>
-                <div className="content">Description: {parse(description)}</div>
-            </div>
-        )
+        if(description === ""){
+            return (
+                <div className="coin-description-container">
+                    <div className="title">About {name}</div>
+                    <div className="content">No Content</div>
+                </div>
+            )
+        }else
+            return (
+                <div className="coin-description-container">
+                    <div className="title">About {name}</div>
+                    <div className="content">{parse(description)}</div>
+                </div>
+            )
     }
 }
 
