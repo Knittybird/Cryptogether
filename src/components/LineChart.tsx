@@ -6,18 +6,17 @@ import { ApexOptions } from "apexcharts";
 
 /**
  * LineChart: Line Chart Component
- * Props:  Data<[timstamp, number][]  array of data to be displayed
+ * Props:  series <data<[timstamp, number][]>   array of data
+ *                 name <string>                optional name of line to be displayed in on hover tooltip
+ *                > []       one element for each line displayed
  *         title <string>   Optional default is no title displayed
- *         name <string>    Optional name of line to be desplayed on hover tooltip
  */
 
 
 
 interface LineChartProps{
-  data: any,
+  series: ApexAxisChartSeries
   title?: string
-  name?: string
-
 }
 
 type LineChartState = {
@@ -44,7 +43,7 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
             
         },
         grid: {
-          borderColor: '#8cc8ff'
+          borderColor: '#8cc8ff'// bright
         },
         tooltip: {
           theme: 'dark'
@@ -53,25 +52,19 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           type: 'datetime',
           labels: {
             style: {
-              colors: '#d7ecff'
+              colors: '#d7ecff'   // brighter
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#d7ecff'
+              colors: '#d7ecff'// brighter
             }
           }
         }
-        // theme: {
-        //   mode: 'dark'
-        // },
       },
-      series: [{
-          name: this.props.name,
-          data: this.props.data,
-      }]
+      series: this.props.series
     }
     };
 

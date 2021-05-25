@@ -4,8 +4,9 @@ import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
 import { getLineAndCharacterOfPosition } from 'typescript';
-import LineChart from './LineChart'
-import { Jumbotron } from 'react-bootstrap'
+import LineChart from './LineChart';
+import ApexCharts from "apexcharts";
+import { Jumbotron } from 'react-bootstrap';
 
 const NUM_PER_PAGE = 50
 interface ExchangeDetailProps{
@@ -135,11 +136,15 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     render() {
         const {id, currency} = this.props;
         const {exchange, loaded, volume} = this.state;
+        const e_series:ApexAxisChartSeries = [{
+                  data: volume,
+                  name: exchange.name,
+        }]
         if(loaded) {
             return (
                 <>
                 <Jumbotron>
-                    <LineChart data={volume} name={exchange.name}/>
+                    <LineChart series={e_series} />
                 </Jumbotron>
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
