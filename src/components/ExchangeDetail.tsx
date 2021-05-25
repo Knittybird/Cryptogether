@@ -124,7 +124,7 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
             return (
                 <>
                 <Jumbotron>
-                    <LineChart data={exchangeTestData} />
+                    <LineChart data={exchangeTestData} name={exchange.name}/>
                 </Jumbotron>
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>

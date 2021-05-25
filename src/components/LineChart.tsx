@@ -9,33 +9,44 @@ import { ApexOptions } from "apexcharts";
  * Props:
  */
 
-const opt:ApexOptions = {
+// const opt:ApexOptions = {
 
-        chart: {
-          height: 350,
-          type: 'line',
-          zoom: {
-            enabled: false
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'straight'
-        },
-        title: {
-          text: 'Volume1',
-          align: 'left'
-        },
-        xaxis: {
-          type: 'datetime',
-        }
-}
+//         chart: {
+//           height: 350,
+//           type: 'line',
+//           zoom: {
+//             enabled: false
+//           },
+//           foreColor: '#666',
+            
+//         },
+//         dataLabels: {
+//           enabled: false
+//         },
+//         grid: {
+//           // borderColor:'#8cc8ff'
+//           column: {
+//           colors: ['#00FF00']
+//         },
+//         stroke: {
+//           curve: 'straight'
+//         },
+//         title: {
+//           text: 'Volume1',
+//           align: 'left'
+//         },
+//         xaxis: {
+//           type: 'datetime',
+//         },
+//         // tooltip: {
+//         //   theme: 'dark',
+//         // }
+// }
 
 interface LineChartProps{
   data: any,
   title?: string
+  name?: string
 
 }
 
@@ -50,17 +61,49 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
     super(props);
 
     this.state = {
-      series: [{
-          data: this.props.data,
-      }],
       options: {
+        chart: {
+          height: 350,
+          type: 'line',
+          zoom: {
+            enabled: false
+          },
+          toolbar:{
+            show: false,
+          }
+            
+        },
+        grid: {
+          borderColor: '#8cc8ff'
+        },
+        tooltip: {
+          theme: 'dark'
+        },
         xaxis: {
           type: 'datetime',
+          labels: {
+            style: {
+              colors: '#d7ecff'
+            }
+          }
+        },
+        yaxis: {
+          labels: {
+            style: {
+              colors: '#d7ecff'
+            }
+          }
         }
-      }
-    
+        // theme: {
+        //   mode: 'dark'
+        // },
+      },
+      series: [{
+          name: this.props.name,
+          data: this.props.data,
+      }]
+    }
     };
-  }
 
   
 
