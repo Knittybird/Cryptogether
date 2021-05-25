@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import SimpleNumber from './SimpleNum'
 import SimplePercentage from './SimplePercentage';
+import SimpleNum from './SimpleNum';
 
 interface CoinMarketProps{
     currency :string;
@@ -86,7 +87,7 @@ export class CoinMarket extends Component<CoinMarketProps,CoinMarketState> {
                 <div className="coin-market-title"></div>
                 <div className="coin-market-container">
                 <div className="container1">
-                <div className="price"><div className="title">PRICE</div><div className="value">${coin.current_price}</div></div>
+                <div className="price"><div className="title">PRICE</div><div className="value">$<SimpleNum value={coin.current_price} /></div></div>
                   <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
                 </div>
                 <div className="container2">
@@ -104,7 +105,7 @@ export class CoinMarket extends Component<CoinMarketProps,CoinMarketState> {
                 <div className="coin-market-title"></div>
                 <div className="coin-market-container">
                 <div className="container1">
-                <div className="price"><div className="title">PRICE</div><div className="value">¥{coin.current_price}</div></div>
+                <div className="price"><div className="title">PRICE</div><div className="value">¥<SimpleNum value={coin.current_price} /></div></div>
                   <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
                 </div>
                 <div className="container2">
@@ -122,7 +123,7 @@ export class CoinMarket extends Component<CoinMarketProps,CoinMarketState> {
                 <div className="coin-market-title"></div>
                 <div className="coin-market-container">
                 <div className="container1">
-                <div className="price"><div className="title">PRICE</div><div className="value">€{coin.current_price}</div></div>
+                <div className="price"><div className="title">PRICE</div><div className="value">€<SimpleNum value={coin.current_price} /></div></div>
                   <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
                 </div>
                 <div className="container2">
