@@ -2,12 +2,17 @@ import React, { Component } from 'react'
 import ColorNum from './ColorNum'
 import SimpleNum from './SimpleNum'
 import axios from 'axios'
+import SparkLineChart from './SparkLineChart'
 import './CoinList.css'
 
 const NUM_PER_PAGE = 50
 
 interface CoinListProps {
   currency: string
+}
+
+interface Sparkline {
+  price: number[]
 }
 
 interface Coin {
@@ -36,7 +41,8 @@ interface Coin {
   atl_change_percentage: number,
   atl_date: Date,
   roi: string,
-  last_updated: Date
+  last_updated: Date,
+  sparkline_in_7d: Sparkline
 }
 
 interface CoinListState {
@@ -55,14 +61,16 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=${NUM_PER_PAGE}`
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=${NUM_PER_PAGE}&sparkline=true`
     axios.get(url)
       .then(response => {
         const data = response.data
         this.setState({
           coins: data,
           loaded: true
+          
         })
+        console.log(data[0].sparkline_in_7d.price.length)
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
   }
@@ -90,6 +98,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
               <th key={3}>24h change</th>
               <th key={4}>24h change %</th>
               <th key={5}>Volume</th>
+              <th key={6}>Trending</th>
             </tr>
             {coins.map((coin, i) => 
               <tr key={i+1}>
@@ -103,6 +112,8 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                   <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
                 </td>
                 <td key={5}><SimpleNum value={coin.total_volume} /></td>
+                
+                <td key={6}><SparkLineChart price={coin.sparkline_in_7d.price} /></td>
               </tr>
             )}
           </tbody>
