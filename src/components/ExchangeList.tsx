@@ -84,10 +84,10 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     if (loaded) {
       return (
         <>
+          <h3>Exchanges</h3>
           <Jumbotron>
               <LineChart series={volume_series} />
           </Jumbotron>
-          <h3>Exchanges</h3>
           <table className="exchangeList table">
             <tbody>
               <tr key={0}>
