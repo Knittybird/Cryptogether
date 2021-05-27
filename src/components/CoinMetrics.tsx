@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import SimpleNumber from './SimpleNum'
+import SimpleNum from './SimpleNum';
+import SimplePercentage from './SimplePercentage'
 interface CoinMetricsProps {
     id: string,
     currency:string
@@ -74,17 +77,133 @@ export class CoinMetrics extends Component<CoinMetricsProps,CoinMetricsState> {
     render() {
         const {id, currency} = this.props;
         const {loaded, coin} = this.state;
-        return (
-            <div> Key Metrics:
-                <div>24 Hour High {coin.high_24h}</div>
-                <div>24 Hour Low {coin.low_24h}</div>
-                <div>Net Change {coin.price_change_24h}</div>
-                <div>All Time High {coin.ath}</div>
-                <div>All Time Low {coin.atl}</div>
-                <div>Returns (24h) {coin.price_change_percentage_24h}</div>
-                <div>Total Supply {coin.circulating_supply}</div>
-            </div>
-        )
+        switch(currency){
+          case 'usd':
+            return (
+              <div className="coin-key-metrics">
+                  <div className="metrics-title"> Key Metrics </div>
+                  <div className="metrics-container">
+                    <table>
+                      <tr>
+                        <td>
+                          <div className="h_high"><div className="title">24 HOUR HIGH </div> <div className="value">$<SimpleNum value={coin.high_24h} /></div></div>
+                        </td>
+                        <td>
+                          <div className="h_low"><div className="title">24 HOUR LOW</div> <div className="value">$<SimpleNum value={coin.low_24h} /></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="net_change"><div className="title">NET CHANGE</div><div className="value">${coin.price_change_24h}</div> </div>
+                        </td>
+                        <td>
+                          <div className="ath"><div className="title">ALL TIME HIGH</div><div className="value">$<SimpleNum value={coin.ath}/></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="atl"><div className="title">ALL TIME LOW</div><div className="value">$<SimpleNum value={coin.atl} /></div> </div>
+                        </td>
+                        <td>
+                        <div className="return"><div className="title">RETURN (24H)</div><div className="value"><SimplePercentage value={coin.price_change_percentage_24h}/></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                        <div className="supply"><div className="title">TOTAL SUPPLY</div><div className="value">$<SimpleNum value={coin.circulating_supply} /></div> </div>
+                        </td>
+                        <td>
+                        </td>
+                      </tr>
+                    </table>
+                  </div> 
+              </div>
+          )
+          case 'jpy':
+
+            return (
+              <div className="coin-key-metrics">
+                  <div className="metrics-title"> Key Metrics </div>
+                  <div className="metrics-container">
+                    <table>
+                      <tr>
+                        <td>
+                          <div className="h_high"><div className="title">24 HOUR HIGH </div> <div className="value">¥<SimpleNum value={coin.high_24h} /></div></div>
+                        </td>
+                        <td>
+                          <div className="h_low"><div className="title">24 HOUR LOW</div> <div className="value">¥<SimpleNum value={coin.low_24h} /></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="net_change"><div className="title">NET CHANGE</div><div className="value">¥{coin.price_change_24h}</div> </div>
+                        </td>
+                        <td>
+                          <div className="ath"><div className="title">ALL TIME HIGH</div><div className="value">¥<SimpleNum value={coin.ath}/></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="atl"><div className="title">ALL TIME LOW</div><div className="value">¥<SimpleNum value={coin.atl} /></div> </div>
+                        </td>
+                        <td>
+                        <div className="return"><div className="title">RETURN (24H)</div><div className="value"><SimplePercentage value={coin.price_change_percentage_24h}/></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                        <div className="supply"><div className="title">TOTAL SUPPLY</div><div className="value">¥<SimpleNum value={coin.circulating_supply} /></div> </div>
+                        </td>
+                        <td>
+                        </td>
+                      </tr>
+                    </table>
+                  </div> 
+              </div>
+          )
+          case 'eur':
+            return (
+              <div className="coin-key-metrics">
+                  <div className="metrics-title"> Key Metrics </div>
+                  <div className="metrics-container">
+                    <table>
+                      <tr>
+                        <td>
+                          <div className="h_high"><div className="title">24 HOUR HIGH </div> <div className="value">€<SimpleNum value={coin.high_24h} /></div></div>
+                        </td>
+                        <td>
+                          <div className="h_low"><div className="title">24 HOUR LOW</div> <div className="value">€<SimpleNum value={coin.low_24h} /></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="net_change"><div className="title">NET CHANGE</div><div className="value">€{coin.price_change_24h}</div> </div>
+                        </td>
+                        <td>
+                          <div className="ath"><div className="title">ALL TIME HIGH</div><div className="value">€<SimpleNum value={coin.ath}/></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div className="atl"><div className="title">ALL TIME LOW</div><div className="value">€<SimpleNum value={coin.atl} /></div> </div>
+                        </td>
+                        <td>
+                        <div className="return"><div className="title">RETURN (24H)</div><div className="value"><SimplePercentage value={coin.price_change_percentage_24h} /></div> </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                        <div className="supply"><div className="title">TOTAL SUPPLY</div><div className="value">€<SimpleNum value={coin.circulating_supply} /></div> </div>
+                        </td>
+                        <td>
+                        </td>
+                      </tr>
+                    </table>
+                  </div> 
+              </div>
+          )
+        }
+        
     }
 }
 

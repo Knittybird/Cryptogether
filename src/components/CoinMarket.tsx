@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import SimpleNumber from './SimpleNum'
+import SimplePercentage from './SimplePercentage';
+import SimpleNum from './SimpleNum';
+
 interface CoinMarketProps{
     currency :string;
     id:string;
@@ -76,15 +80,64 @@ export class CoinMarket extends Component<CoinMarketProps,CoinMarketState> {
         const {id, currency} = this.props;
         const {loaded, coin} = this.state;
 
+        switch(currency){
+          case 'usd':{
+            return (
+              <div className="coin-market">
+                <div className="coin-market-title"></div>
+                <div className="coin-market-container">
+                <div className="container1">
+                <div className="price"><div className="title">PRICE</div><div className="value">$<SimpleNum value={coin.current_price} /></div></div>
+                  <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
+                </div>
+                <div className="container2">
+                <div className="market-cap"><div className="title">MARKET CAP</div> <div className="value"> $<SimpleNumber value={coin.market_cap} /></div></div>
+                  <div className="volume"><div className="title">VOLUME</div> <div className="value"> $<SimpleNumber value={coin.total_volume} /></div></div>
+                </div>
+              </div>
+              </div>
+              
+          )
+          }
+          case 'jpy':{
+            return (
+              <div className="coin-market">
+                <div className="coin-market-title"></div>
+                <div className="coin-market-container">
+                <div className="container1">
+                <div className="price"><div className="title">PRICE</div><div className="value">¥<SimpleNum value={coin.current_price} /></div></div>
+                  <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
+                </div>
+                <div className="container2">
+                <div className="market-cap"><div className="title">MARKET CAP</div> <div className="value"> ¥<SimpleNumber value={coin.market_cap} /></div></div>
+                  <div className="volume"><div className="title">VOLUME</div> <div className="value"> ¥<SimpleNumber value={coin.total_volume} /></div></div>
+                </div>
+              </div>
+              </div>
+              
+          )
+          }
+          case 'eur':{
+            return (
+              <div className="coin-market">
+                <div className="coin-market-title"></div>
+                <div className="coin-market-container">
+                <div className="container1">
+                <div className="price"><div className="title">PRICE</div><div className="value">€<SimpleNum value={coin.current_price} /></div></div>
+                  <div className="h-change"><div className="title">24 HOUR % CHANGE</div><div className="value"><SimplePercentage value={coin.market_cap_change_percentage_24h} /></div></div>
+                </div>
+                <div className="container2">
+                <div className="market-cap"><div className="title">MARKET CAP</div> <div className="value"> €<SimpleNumber value={coin.market_cap} /></div></div>
+                  <div className="volume"><div className="title">VOLUME</div> <div className="value"> €<SimpleNumber value={coin.total_volume} /></div></div>
+                </div>
+              </div>
+              </div>
+              
+          )
+          }
+        }
         
-        return (
-            <div>
-                <div>Price:{coin.current_price}</div>
-                <div>24 Hour % Change:{coin.price_change_percentage_24h}</div>
-                <div>Market Cap:{coin.market_cap}</div>
-                <div>Volume:{coin.total_volume}</div>
-            </div>
-        )
+        
     }
 }
 
