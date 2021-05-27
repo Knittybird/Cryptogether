@@ -34,3 +34,7 @@ body {
 .navbar-custom .navbar-nav .nav-link:hover {
   color: var(--highlight);
 }
+
+.apexcharts-menu {
+  color: var(--darker);
+}
