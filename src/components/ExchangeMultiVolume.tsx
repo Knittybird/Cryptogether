@@ -11,48 +11,34 @@ interface VolumeChartProps{
   title?: string
 }
 export default function MultiVolumeChart({ids, names, title}:VolumeChartProps){
-  const [Title, setTitle] = useState<string> ();
   const [series, setSeries] = useState<ApexAxisChartSeries>()
   const [loaded, setLoaded] = useState<boolean>(false)
   
-  async function foo(id:string, name: string){
-      const url = `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=7`;
-      const response = await axios.get(url)
-      const v_data:[number, number][] = response.data.map((id) => [id[0], parseInt(id[1])])
-      // console.log(`v_data, ${v_data}`)
-      console.log(`typeof v_data`, typeof v_data)
-      if (series) {
-        setSeries(series.concat([{data: v_data, name: name}]))
-      }
-      else {
-        setSeries([{data: v_data, name: name}])
-      }
-      if (series && series.length === 3) {
+  async function getVolume(ids:string[], names: string[]){
+      const urlpre = `https://api.coingecko.com/api/v3/exchanges/`;
+      const urlpost = `/volume_chart?days=7`;
+      const response0 = await axios.get(`${urlpre}${ids[0]}${urlpost}`)
+      const response1 = await axios.get(`${urlpre}${ids[1]}${urlpost}`)
+      const response2 = await axios.get(`${urlpre}${ids[2]}${urlpost}`)
+      const v_data0:[number, number][] = response0.data.map((id) => [id[0], parseInt(id[1])])
+      const v_data1:[number, number][] = response1.data.map((id) => [id[0], parseInt(id[1])])
+      const v_data2:[number, number][] = response2.data.map((id) => [id[0], parseInt(id[1])])
+        setSeries([ {data: v_data0, name: names[0]},    // this is a kluge and not acceptible for the real world
+                    {data: v_data1, name: names[1]},
+                    {data: v_data2, name: names[2]}])
         setLoaded(true)
-      }
 }
   useEffect(() => {
     let volume_series:ApexAxisChartSeries = []
-    ids.forEach((id, index) => {
-      const blah = foo(id, names[index])
-    })
+    getVolume(ids, names);
 
-    console.log(`series, ${series}`)
-    if (title) {
-      setTitle(title)
-    }
-    if (series){
-      console.log(series.length)
-
-    }
-  }, [title])
+    
+  }, [])
 
   if (loaded===true) {
   return (
     <>
-      <p>  {ids}, {names}</p>
       {series &&(
-      // {series && series.length==3 &&(
         <LineChart series={series} title={title}></LineChart>
       )}
       

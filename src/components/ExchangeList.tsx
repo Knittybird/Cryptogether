@@ -5,9 +5,6 @@ import axios from 'axios'
 import './ExchangeList.css'
 import { Jumbotron } from 'react-bootstrap';
 import MultiVolumeChart from './ExchangeMultiVolume';
-import { kraken_volume } from '../test_data/kraken_volume'
-import { gdax_volume } from '../test_data/gdax_volume'
-import { binance_volume }  from '../test_data/binance_volume'
 
 const NUM_PER_PAGE = 50
 
@@ -62,20 +59,6 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
           loaded: true,
           volume_ids: ids,
           volume_names: names,
-          // volume_series: [
-          //   {
-          //     data: binance_volume,
-          //     name:   'Binance',
-          //   },
-          //   {
-          //     data: gdax_volume,
-          //     name: 'Coinbase'
-          //   },
-          //   {
-          //     data: kraken_volume,
-          //     name: 'Kraken'
-          //   }
-          // ],
         })
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
