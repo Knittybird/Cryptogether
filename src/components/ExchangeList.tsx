@@ -4,7 +4,7 @@ import ColorNum from './ColorNum'
 import axios from 'axios'
 import './ExchangeList.css'
 import { Jumbotron } from 'react-bootstrap';
-import VolumeChart from './ExchangeVolume';
+import MultiVolumeChart from './ExchangeMultiVolume';
 import { kraken_volume } from '../test_data/kraken_volume'
 import { gdax_volume } from '../test_data/gdax_volume'
 import { binance_volume }  from '../test_data/binance_volume'
@@ -14,7 +14,7 @@ const NUM_PER_PAGE = 50
 interface ExchangeListProps {
 }
 
-export interface Exchange {
+interface Exchange {
   id: string,
   name: string,
   year_established: number,
@@ -93,7 +93,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
         <>
           <h3>Exchanges</h3>
           <Jumbotron>
-              <VolumeChart ids={volume_ids} names = {volume_names} title='Top 3 Exchanges'/>
+              <MultiVolumeChart ids={volume_ids} names = {volume_names} title='Top 3 Exchanges'/>
           </Jumbotron>
           <table className="exchangeList table">
             <tbody>
