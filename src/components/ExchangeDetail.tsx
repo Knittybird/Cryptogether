@@ -142,16 +142,28 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
         }]
         if(loaded) {
             return (
-                <>
-                <Jumbotron>
-                    <LineChart series={e_series} />
-                </Jumbotron>
-                <div>
+                
+                
+                <div className="exchange-detail">
+                  
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
-                    <ExchangeTable tickers={exchange.tickers} currency={currency} />
-                    <ExchangeStatusUpdate status_updates={exchange.status_updates} />
+                    <div className="exchange-data">
+                        <div className="exchange-data-container">
+                          <div className="container1">
+                            <Jumbotron>
+                            <LineChart series={e_series} />
+                            </Jumbotron>
+                          </div>
+                          <div className="container2">
+                            <ExchangeTable tickers={exchange.tickers} currency={currency} />
+                            <ExchangeStatusUpdate status_updates={exchange.status_updates} />
+                          </div>
+                        
+                        </div>
+                    </div>
+                   
                 </div>
-                </>
+                
             )
         }else{
             return (<div>Loading</div>)
