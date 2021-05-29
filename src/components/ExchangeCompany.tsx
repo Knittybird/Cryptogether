@@ -20,17 +20,30 @@ export class ExchangeCompany extends Component<ExchangeCompanyProps> {
         const {name, image,centralized, trustScore, trustScoreRank} = this.props;
         
         return (
-            <div className="company-container">
-                <div className="company-image"><img src={image} alt="binance image" /></div>
-                <div className="company-title">
-                    <div className="company-name">{name}</div>
-                    <div className="company-centralized">
-                        {centralized? 'Centralized' : ''}</div>
+            <div className="container">
+                <div className="company-container">
+                <div className="company-title-container">
+                    <div className="company-image">
+                        <img src={image} alt="binance image" />
+                    </div>
+                    <div className="company-title">
+                        <div className="company-name">{name}</div>
+                        <div className="company-centralized">
+                            {centralized? 'Centralized' : ''}</div>
+                    </div>
                 </div>
                 <div className="company-trust-score">
-                    <div className="company-score">{trustScore}</div>
-                    <div className="company-rank">{trustScoreRank}</div>
+                    <div className="company-score">
+                        <div className="value">{trustScore}</div>
+                        <div className="title">Trust Score</div>
+                    </div>
+                    <div className="line"></div>
+                    <div className="company-rank">
+                        <div className="title">RANK</div>
+                        <div className="value">{trustScoreRank}</div>
+                    </div>
                 </div>
+            </div>
             </div>
         )
     }
