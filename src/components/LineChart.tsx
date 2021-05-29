@@ -39,8 +39,8 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           },
           toolbar:{
             show: false,
-          }
-            
+          },
+          foreColor: '#8cc8ff'
         },
         grid: {
           borderColor: '#8cc8ff'// bright
