@@ -1,4 +1,4 @@
-@media (max-width: 414px) {
+@media (max-width: 415px) {
   .exchange-view {
     padding: 1em;
     display: flex;
@@ -12,11 +12,12 @@
 
     justify-content: space-between;
   }
-  .exchange-detail .company-container .company-title-container {
+  .exchange-detail .container .company-container .company-title-container {
     display: flex;
     padding: 2em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-image
@@ -24,10 +25,15 @@
     width: 5em;
     border: var(--bright) solid 5pt;
   }
-  .exchange-detail .company-container .company-title-container .company-title {
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title {
     padding: 1em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-title
@@ -36,6 +42,7 @@
     font-size: 0.9em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-title
@@ -43,24 +50,29 @@
     font-size: 1.8em;
     font-weight: 700;
   }
-  .exchange-detail .company-container .company-trust-score {
+  .exchange-detail .container .company-container .company-trust-score {
     display: flex;
     flex-wrap: nowrap;
 
     padding: 1em;
   }
-  .exchange-detail .company-container .company-trust-score .company-score {
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-score {
     padding: 0.6em;
     background-color: var(--dark);
     border-radius: 15pt;
     font-size: 1em;
     text-align: center;
   }
-  .exchange-detail .company-container .company-trust-score .line {
+  .exchange-detail .container .company-container .company-trust-score .line {
     border-right: var(--bright) solid 1pt;
     padding: 0.3em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-trust-score
     .company-score
@@ -69,13 +81,18 @@
     font-size: 1.8em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-trust-score
     .company-score
     .title {
     font-weight: 500;
   }
-  .exchange-detail .company-container .company-trust-score .company-rank {
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-rank {
     padding: 1em;
     margin-left: 0.6em;
     background-color: var(--dark);
@@ -84,6 +101,7 @@
     text-align: center;
   }
   .exchange-detail
+    .container
     .company-container
     .company-trust-score
     .company-rank
@@ -92,6 +110,7 @@
   }
 
   .exchange-detail
+    .container
     .company-container
     .company-trust-score
     .company-rank
@@ -293,7 +312,7 @@
   }
 }
 
-@media (min-width: 414px) and (max-width: 768px) {
+@media (min-width: 415px) and (max-width: 768px) {
   .exchange-view {
     padding: 1em;
     display: flex;
