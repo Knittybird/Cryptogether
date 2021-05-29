@@ -4,7 +4,7 @@ import axios from 'axios';
 import CurrencySelector from './CurrencySelector';
 import CoinDetail from './CoinDetail'
 import ExchangeDetail from './ExchangeDetail';
-
+import './ExchangeDetail.css'
 
 type Props = {
   currency: string
