@@ -20,8 +20,7 @@ export class CoinDescription extends Component<CoinDescriptionProps> {
         if(description === ""){
             return (
                 <div className="coin-description-container">
-                    <div className="title">About {name}</div>
-                    <div className="content">No Description</div>
+                    
                 </div>
             )
         }else

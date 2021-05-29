@@ -4,10 +4,7 @@ import ColorNum from './ColorNum'
 import axios from 'axios'
 import './ExchangeList.css'
 import { Jumbotron } from 'react-bootstrap';
-import LineChart from './LineChart';
-import { kraken_volume } from '../test_data/kraken_volume'
-import { gdax_volume } from '../test_data/gdax_volume'
-import { binance_volume }  from '../test_data/binance_volume'
+import MultiVolumeChart from './ExchangeMultiVolume';
 
 const NUM_PER_PAGE = 50
 
@@ -31,7 +28,8 @@ interface Exchange {
 
 interface ExchangeListState {
   exchanges: Exchange[], 
-  volume_series: ApexAxisChartSeries,
+  volume_ids: string[],
+  volume_names: string[],
   loaded: boolean
 }
 
@@ -40,35 +38,27 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     super(props)
     this.state = {
       exchanges: [],
-      volume_series: [],
+      volume_ids: [],
+      volume_names: [],
       loaded: false,
     }
   }
 
- d
 
   loadData = () => {
     const url = `https://api.coingecko.com/api/v3/exchanges?per_page=${NUM_PER_PAGE}`
     axios.get(url)
       .then(response => {
         const data = response.data
+        const ids = data.slice(0,3).map(exch => exch.id)
+        const names = data.slice(0,3).map(exch => exch.name)
+        console.log(ids)
+        console.log(names)
         this.setState({
           exchanges: data,
           loaded: true,
-          volume_series: [
-            {
-              data: binance_volume,
-              name:   'Binance',
-            },
-            {
-              data: gdax_volume,
-              name: 'Coinbase'
-            },
-            {
-              data: kraken_volume,
-              name: 'Kraken'
-            }
-          ],
+          volume_ids: ids,
+          volume_names: names,
         })
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
@@ -80,13 +70,13 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
   }
 
   render() {
-    const { loaded, exchanges, volume_series} = this.state
+    const { loaded, exchanges, volume_ids, volume_names} = this.state
     if (loaded) {
       return (
         <>
           <h3>Exchanges</h3>
           <Jumbotron>
-              <LineChart series={volume_series} />
+              <MultiVolumeChart ids={volume_ids} names = {volume_names} title='Top 3 Exchanges'/>
           </Jumbotron>
           <table className="exchangeList table">
             <tbody>
