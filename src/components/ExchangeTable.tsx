@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 import axios from 'axios'
+import SimpleNum from './SimpleNum';
+import SimplePercentage from './SimplePercentage';
 
 const NUM_PER_PAGE = 50
 interface ExchangeTableProps{
@@ -59,11 +61,20 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
         });
 
         return (
-            <div>
-                <div>
-                    <div className="total-trade-volume-24h">Total 24h Volume: ${totalTradingVolum}</div>
-                    <div className="number-coins">Total coins: {coinList.length}</div>
-                    <div className="number-pairs">Total pairs: {totalPairs}</div>
+            <div className="exchangeList-container">
+                <div className="exchangeList-overview">
+                    <div className="total-trade-volume-24h">
+                        <div className="title">TOTAL 24H VOLUME</div>
+                        <div className="value"> $<SimpleNum value={totalTradingVolum} /></div>
+                    </div>
+                    <div className="number-coins">
+                        <div className="title">TOTAL COINS</div>
+                        <div className="value">{coinList.length}</div>
+                    </div>
+                    <div className="number-pairs">
+                        <div className="title">TOTAL PAIRs</div>
+                        <div className="value">{totalPairs}</div>
+                    </div>
                 </div>
                 <table className="exchangeList table">
                     <tbody>
@@ -84,10 +95,14 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                             <td key={1}><Link className="base-coin" to={"/coin/" + ticker.coin_id}>{ticker.base}</Link></td>
                             <td key={2}><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
                             <td key={3}>${ticker.last}</td>
-                            <td key={4}>{ticker.bid_ask_spread_percentage * 100} %</td>
-                            <td key={7}>${ticker.converted_volume.usd}</td>
+                            <td key={4}><SimplePercentage value={ticker.bid_ask_spread_percentage} /></td>
+                            <td key={7}>$<SimpleNum value={ticker.converted_volume.usd} /></td>
                             <td key={8}>{new Date(ticker.last_traded_at).toLocaleString()}</td>
-                            <td key={9}>{ticker.trust_score}</td>
+                            <td key={9}>{
+                                ticker.trust_score === 'green' ? <div className="green-dot"></div> :
+                                (ticker.trust_score === 'yellow' ? <div className='yellow-dot'></div> : <div className="red-dot"></div>)
+                            }
+                            </td>
                         </tr>
                         )}
                     </tbody>
