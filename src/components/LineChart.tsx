@@ -59,14 +59,14 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           type: 'datetime',
           labels: {
             style: {
-              colors: '#d7ecff'   // brighter
+              colors: '#8cc8ff'   // bright
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#d7ecff'// brighter
+              colors: '#8cc8ff'   // bright
             }
           }
         }

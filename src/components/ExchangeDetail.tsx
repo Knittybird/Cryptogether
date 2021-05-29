@@ -109,18 +109,6 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
             })
           })
           .catch((error) => {console.log("Something went wrong. ", error)})
-        
-        // //   get volume data and format for chart
-        // axios.get(volume_url)
-        //   .then(response => {
-        //     const v_data = response.data.map((item) => [item[0], parseInt(item[1])])
-        //     this.setState({
-        //       volume: v_data
-        //     })
-        //     console.log(this.state.volume)
-        //   })
-          // .catch((error) => {console.log("Something went wrong. ", error)})
-        
     }
       
       componentDidMount() {    
@@ -136,10 +124,6 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     render() {
         const {id, currency} = this.props;
         const {exchange, loaded, volume} = this.state;
-        // const e_series:ApexAxisChartSeries = [{
-        //           data: volume,
-        //           name: exchange.name,
-        // }]
         if(loaded) {
             return (
                 <>

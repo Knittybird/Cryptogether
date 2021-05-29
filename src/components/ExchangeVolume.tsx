@@ -11,7 +11,7 @@ interface VolumeChartProps{
   title?: string
 }
 export default function VolumeChart({id, name, title}:VolumeChartProps){
-  const [Title, setTitle] = useState<string> ();
+  const [titleState, setTitleState] = useState<string> ();
   const [series, setSeries] = useState<ApexAxisChartSeries> ()  
   async function getVolume(id:string, name: string){
       const url = `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=7`;
@@ -25,7 +25,7 @@ export default function VolumeChart({id, name, title}:VolumeChartProps){
   useEffect(() => {
     getVolume(id, name)
     if (title) {
-      setTitle(title)
+      setTitleState(title)
     }
     if (series) {
       console.log(series.length)
@@ -35,7 +35,7 @@ export default function VolumeChart({id, name, title}:VolumeChartProps){
   return (
     <>
     {series &&(
-      <LineChart series={series} title={title}></LineChart>
+      <LineChart series={series} title={titleState}></LineChart>
     )}
     </>
   )
