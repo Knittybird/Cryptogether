@@ -45,6 +45,13 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
         grid: {
           borderColor: '#8cc8ff'// bright
         },
+        title: {
+          text: this.props.title,
+          align: 'left',
+          style: {
+            color: '#d7ecff'   // brighter
+          },
+        },
         tooltip: {
           theme: 'dark'
         },
@@ -52,14 +59,14 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           type: 'datetime',
           labels: {
             style: {
-              colors: '#d7ecff'   // brighter
+              colors: '#8cc8ff'   // bright
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#d7ecff'// brighter
+              colors: '#8cc8ff'   // bright
             }
           }
         }

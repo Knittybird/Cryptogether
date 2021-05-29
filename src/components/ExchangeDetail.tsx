@@ -4,7 +4,7 @@ import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
 import { getLineAndCharacterOfPosition } from 'typescript';
-import LineChart from './LineChart';
+import VolumeChart from './ExchangeVolume';
 import ApexCharts from "apexcharts";
 import { Jumbotron } from 'react-bootstrap';
 
@@ -109,18 +109,6 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
             })
           })
           .catch((error) => {console.log("Something went wrong. ", error)})
-        
-        //   get volume data and format for chart
-        axios.get(volume_url)
-          .then(response => {
-            const v_data = response.data.map((item) => [item[0], parseInt(item[1])])
-            this.setState({
-              volume: v_data
-            })
-            console.log(this.state.volume)
-          })
-          .catch((error) => {console.log("Something went wrong. ", error)})
-        
     }
       
       componentDidMount() {    
@@ -136,15 +124,11 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     render() {
         const {id, currency} = this.props;
         const {exchange, loaded, volume} = this.state;
-        const e_series:ApexAxisChartSeries = [{
-                  data: volume,
-                  name: exchange.name,
-        }]
         if(loaded) {
             return (
                 <>
                 <Jumbotron>
-                    <LineChart series={e_series} />
+                    <VolumeChart id={this.props.id} name={exchange.name} title={'Volume over 7 days'} />
                 </Jumbotron>
                 <div>
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
