@@ -20,7 +20,7 @@
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.5",
-    "apexcharts": "^3.26.3",
+    "apexcharts": "ekhmoi/apexcharts.js",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0",
     "express": "^4.17.1",
