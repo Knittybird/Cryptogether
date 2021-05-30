@@ -5,13 +5,16 @@
 .exchangeList {
   background: var(--dark);
   border-radius: 10px;
-  padding: 0 1em;
 }
 
 .exchangeList a {
   color: var(--brighter);
   font-weight: normal;
   text-decoration: none;
+}
+
+.exchangeList a:hover {
+  color: var(--highlight);
 }
 
 .exchangeList th {

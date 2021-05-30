@@ -1,7 +1,6 @@
 .coinList {
   background: var(--dark);
   border-radius: 10px;
-  word-break: break-all;
 }
 
 .coinList th {
@@ -10,6 +9,7 @@
 
 .coinList td {
   color: var(--brighter);
+  word-break: break-all;
 }
 
 .coinList tr {
@@ -27,4 +27,8 @@
 .coinList a {
   color: var(--brighter);
   text-decoration: none;
+}
+
+.coinList a:hover {
+  color: var(--highlight);
 }
