@@ -2,6 +2,7 @@ import React from 'react'
 
 interface SimpleNumProps {
   value: number,
+  prefix?: string
 }
 
 function SimpleNum(props: SimpleNumProps) {
@@ -25,10 +26,10 @@ function SimpleNum(props: SimpleNumProps) {
     return newValue;
   }
 
-  const { value } = props
+  const { value, prefix } = props
   return (
     <span className="simpleNum">
-      {abbreviateNumber(value)}
+      {prefix ? prefix : ''}{abbreviateNumber(value)}
     </span>
   )
 }

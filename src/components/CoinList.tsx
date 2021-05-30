@@ -86,7 +86,14 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   render() {
+    const { currency } = this.props
     const { loaded, coins } = this.state
+    let currencySymbol = '$'
+    if (currency == 'jpy') {
+      currencySymbol = '¥'
+    } else if (currency == 'eur') {
+      currencySymbol = '€'
+    }
     if (loaded) {
       return (
         <table className="coinList table">
@@ -96,7 +103,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
               <th key={1} className="d-none d-sm-table-cell">Name</th>
               <th key={2} className="text-end">Price</th>
               <th key={3} className="d-none d-md-table-cell text-end">24h change</th>
-              <th key={4} className="text-end">24h change %</th>
+              <th key={4} className="text-end">24h change</th>
               <th key={5} className="text-end">Volume</th>
               <th key={6} className="d-none d-lg-table-cell text-center">Trending</th>
             </tr>
@@ -112,14 +119,14 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                     {coin.name}
                   </Link>
                 </td>
-                <td key={2} className="text-end">{coin.current_price.toFixed(2)}</td>
+                <td key={2} className="text-end">{currencySymbol + coin.current_price.toFixed(2)}</td>
                 <td key={3} className="d-none d-md-table-cell text-end">
                   <ColorNum value={coin.price_change_24h.toFixed(2)}/>
                 </td>
                 <td key={4} className="text-end">
                   <ColorNum value={coin.price_change_percentage_24h.toFixed(2)} suffix="%" />
                 </td>
-                <td key={5} className="text-end"><SimpleNum value={coin.total_volume} /></td>
+                <td key={5} className="text-end"><SimpleNum value={coin.total_volume} prefix={currencySymbol}/></td>
                 
                 <td key={6} className="d-none d-lg-table-cell"><SparkLineChart price={coin.sparkline_in_7d.price} /></td>
               </tr>
