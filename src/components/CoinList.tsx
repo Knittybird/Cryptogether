@@ -69,7 +69,6 @@ class CoinList extends Component<CoinListProps, CoinListState> {
         this.setState({
           coins: data,
           loaded: true
-          
         })
         console.log(data[0].sparkline_in_7d.price.length)
       })
@@ -115,10 +114,10 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                 </td>
                 <td key={2} className="text-end">{coin.current_price.toFixed(2)}</td>
                 <td key={3} className="d-none d-md-table-cell text-end">
-                  <ColorNum value={coin.price_change_24h}/>
+                  <ColorNum value={coin.price_change_24h.toFixed(2)}/>
                 </td>
                 <td key={4} className="text-end">
-                  <ColorNum value={coin.price_change_percentage_24h} suffix="%" />
+                  <ColorNum value={coin.price_change_percentage_24h.toFixed(2)} suffix="%" />
                 </td>
                 <td key={5} className="text-end"><SimpleNum value={coin.total_volume} /></td>
                 
