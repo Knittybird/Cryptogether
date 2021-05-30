@@ -5,6 +5,7 @@
 .exchangeList {
   background: var(--dark);
   border-radius: 10px;
+  padding: 0 1em;
 }
 
 .exchangeList a {

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
+import './SparkLineChart.css'
 
 /**
  * SparkLineChart: Trending or Spark Line Chart Component 
@@ -77,7 +78,7 @@ class SparkLineChart extends React.Component<SparkLineChartProps, SparkLineChart
     render() {
       return (
 
-        <div id="chart">
+        <div className="sparkline-chart text-center">
           <Chart options={this.state.options} 
             series={this.state.series} type="line" height={35} width={100}
           />

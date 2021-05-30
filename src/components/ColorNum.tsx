@@ -2,7 +2,7 @@ import React from 'react'
 import './ColorNum.css'
 
 interface ColorNumProps {
-  value: number,
+  value: string|number,
   prefix?: string,
   suffix?: string
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import ColorNum from './ColorNum'
+import { Link } from 'react-router-dom'
+import SimpleNum from './SimpleNum'
 import axios from 'axios'
 import './ExchangeList.css'
 import { Jumbotron } from 'react-bootstrap';
@@ -81,61 +81,49 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
           <table className="exchangeList table">
             <tbody>
               <tr key={0}>
-                <th key={0}>Logo</th>
+                <th key={0} className="text-center">Logo</th>
                 <th key={1}>Name</th>
-                <th key={2}>Year est.</th>
-                <th key={3}>Country</th>
-                <th key={4}>URL</th>
-                <th key={5}>Incentive</th>
-                <th key={6}>Trust</th>
-                <th key={7}>Trust rank</th>
-                <th key={8}>Vol 24h BTC</th>
+                <th key={2} className="text-center">Year est.</th>
+                <th key={3} className="d-none d-sm-table-cell">Country</th>
+                <th key={4} className="text-center">Site</th>
+                <th key={5} className="d-none d-lg-table-cell text-center">Incentive</th>
+                <th key={6} className="d-none d-lg-table-cell text-center">Trust</th>
+                <th key={7} className="d-none d-md-table-cell text-center">Trust rank</th>
+                <th key={8} className="text-end">Vol 24h BTC</th>
               </tr>
               {exchanges.map((exchange, i) => 
                 <tr key={i}>
-                  <th key={0}>
+                  <td key={0} className="text-center">
                     <Link to={"/exchange/" + exchange.id}>
                       <img className="exchange-logo" src={exchange.image}/>
                     </Link>
-                  </th>
-                  <th key={1}>
+                  </td>
+                  <td key={1}>
                     <Link to={"/exchange/" + exchange.id}>
-                      {exchange.name}
+                      <strong>{exchange.name}</strong>
                     </Link>
-                  </th>
-                  <th key={2}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.year_established}
-                    </Link>
-                  </th>
-                  <th key={3}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.country}
-                    </Link>
-                  </th>
-                  <th key={4}>
-                    <a href={exchange.url}>URL</a>
-                  </th>
-                  <th key={5}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.has_trading_incentive ? "yes" : "no"}
-                    </Link>
-                  </th>
-                  <th key={6}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.trust_score}
-                    </Link>
-                  </th>
-                  <th key={7}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.trust_score_rank}
-                    </Link>
-                  </th>
-                  <th key={8}>
-                    <Link to={"/exchange/" + exchange.id}>
-                      {exchange.trade_volume_24h_btc}
-                    </Link>
-                  </th>
+                  </td>
+                  <td key={2} className="text-center">
+                    {exchange.year_established}
+                  </td>
+                  <td key={3} className="d-none d-sm-table-cell">
+                    {exchange.country}
+                  </td>
+                  <td key={4} className="text-center">
+                    <a href={exchange.url}>🌐</a>
+                  </td>
+                  <td key={5} className="d-none d-lg-table-cell text-center">
+                    {exchange.has_trading_incentive ? "yes" : "no"}
+                  </td>
+                  <td key={6} className="d-none d-lg-table-cell text-center">
+                    {exchange.trust_score}
+                  </td>
+                  <td key={7} className="d-none d-md-table-cell text-center">
+                    {exchange.trust_score_rank}
+                  </td>
+                  <td key={8} className="text-end">
+                    {exchange.trade_volume_24h_btc.toFixed(0)}
+                  </td>
                 </tr>
               )}
             </tbody>
