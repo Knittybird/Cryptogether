@@ -1,0 +1,910 @@
+@media (max-width: 415px) {
+  .exchange-view {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .exchange-detail {
+    width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+  }
+  .exchange-detail .container .company-container .company-title-container {
+    display: flex;
+    padding: 2em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-image
+    img {
+    width: 5em;
+    border: var(--bright) solid 5pt;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title {
+    padding: 1em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title
+    .company-centralized {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title
+    .company-name {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+  .exchange-detail .container .company-container .company-trust-score {
+    display: flex;
+    flex-wrap: nowrap;
+
+    padding: 1em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-score {
+    padding: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail .container .company-container .company-trust-score .line {
+    border-right: var(--bright) solid 1pt;
+    padding: 0.3em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-score
+    .value {
+    color: green;
+    font-size: 1.8em;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-score
+    .title {
+    font-weight: 500;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-rank {
+    padding: 1em;
+    margin-left: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-rank
+    .title {
+    font-weight: 600;
+  }
+
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .company-rank
+    .value {
+    color: red;
+    font-size: 1.8em;
+  }
+  .exchange-detail .exchange-data {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .exchange-detail .exchange-data .container1 {
+    width: 50%;
+  }
+
+  .exchange-detail .exchangeList-container .exchangeList-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+  }
+  .exchange-detail
+    .exchange-data
+    .container2
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail .exchangeList-container .table {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table tr {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table td {
+    padding: 0.7em;
+  }
+  .exchange-detail .exchangeList-container .table .green-dot {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .red-dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .yellow-dot {
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+  /*------------- */
+
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .news-container-title {
+    padding: 0.5em;
+    background: var(--highlight);
+    width: 8em;
+    color: black;
+    font-weight: 800;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.5em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container {
+    padding: 0.8em;
+    background: var(--dark);
+    margin: 0.7em;
+    border-radius: 15px;
+    width: 50%;
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-title {
+    font-weight: 700;
+    border-bottom: var(--brighter) solid 2pt;
+    padding: 0.2em;
+    font-size: 1.2em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-user {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-description {
+    margin: 1em;
+    border-left: var(--highlight) solid 1pt;
+    padding: 0.5em;
+  }
+}
+
+@media (min-width: 415px) and (max-width: 768px) {
+  .exchange-view {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .exchange-detail {
+    width: 98%;
+  }
+  .exchange-detail .company-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .exchange-detail .company-container .company-title-container {
+    display: flex;
+    padding: 2em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-image
+    img {
+    width: 5em;
+    border: var(--bright) solid 5pt;
+  }
+  .exchange-detail .company-container .company-title-container .company-title {
+    padding: 1em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-title
+    .company-centralized {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-title
+    .company-name {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+  .exchange-detail .company-container .company-trust-score {
+    display: flex;
+    flex-wrap: nowrap;
+
+    padding: 1em;
+  }
+  .exchange-detail .company-container .company-trust-score .company-score {
+    padding: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail .company-container .company-trust-score .line {
+    border-right: var(--bright) solid 1pt;
+    padding: 0.3em;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-score
+    .value {
+    color: green;
+    font-size: 1.8em;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-score
+    .title {
+    font-weight: 500;
+  }
+  .exchange-detail .company-container .company-trust-score .company-rank {
+    padding: 1em;
+    margin-left: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-rank
+    .title {
+    font-weight: 600;
+  }
+
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-rank
+    .value {
+    color: red;
+    font-size: 1.8em;
+  }
+  .exchange-detail .exchange-data {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .exchange-detail .exchange-data .exchange-data-container .container1 {
+    width: 100%;
+  }
+
+  .exchange-detail .exchangeList-container .exchangeList-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .exchange-detail
+    .exchange-data
+    .container2
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail .exchangeList-container .table {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table tr {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table td {
+    padding: 0.7em;
+  }
+  .exchange-detail .exchangeList-container .table .green-dot {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .red-dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .yellow-dot {
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+  /*------------- */
+
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .news-container-title {
+    padding: 0.5em;
+    background: var(--highlight);
+    width: 8em;
+    color: black;
+    font-weight: 800;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.5em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container {
+    padding: 0.8em;
+    background: var(--dark);
+    margin: 0.7em;
+    border-radius: 15px;
+    width: 80%;
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-title {
+    font-weight: 700;
+    border-bottom: var(--brighter) solid 2pt;
+    padding: 0.2em;
+    font-size: 1.2em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-user {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-description {
+    margin: 1em;
+    border-left: var(--highlight) solid 1pt;
+    padding: 0.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  .exchange-view {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .exchange-detail {
+    width: 100%;
+  }
+  .exchange-detail .container {
+    width: 90%;
+  }
+  .exchange-detail .company-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .exchange-detail .company-container .company-title-container {
+    display: flex;
+    padding: 2em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-image
+    img {
+    width: 5em;
+    border: var(--bright) solid 5pt;
+  }
+  .exchange-detail .company-container .company-title-container .company-title {
+    padding: 1em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-title
+    .company-centralized {
+    font-style: italic;
+    font-size: 0.9em;
+  }
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-title
+    .company-name {
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+  .exchange-detail .company-container .company-trust-score {
+    display: flex;
+    flex-wrap: nowrap;
+
+    padding: 1em;
+  }
+  .exchange-detail .company-container .company-trust-score .company-score {
+    padding: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail .company-container .company-trust-score .line {
+    border-right: var(--bright) solid 1pt;
+    padding: 0.3em;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-score
+    .value {
+    color: green;
+    font-size: 1.8em;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-score
+    .title {
+    font-weight: 500;
+  }
+  .exchange-detail .company-container .company-trust-score .company-rank {
+    padding: 1em;
+    margin-left: 0.6em;
+    background-color: var(--dark);
+    border-radius: 15pt;
+    font-size: 1em;
+    text-align: center;
+  }
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-rank
+    .title {
+    font-weight: 600;
+  }
+
+  .exchange-detail
+    .company-container
+    .company-trust-score
+    .company-rank
+    .value {
+    color: red;
+    font-size: 1.8em;
+  }
+  .exchange-detail .exchange-data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .exchange-detail .exchange-data .exchange-data-container .container1 {
+    width: 100%;
+  }
+
+  .exchange-detail .exchangeList-container .exchangeList-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .exchange-detail
+    .exchange-data
+    .container2
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .total-trade-volume-24h
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-coins
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs {
+    background-color: var(--dark);
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 15pt;
+    border: var(--bright) solid 2pt;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  .exchange-detail
+    .exchangeList-container
+    .exchangeList-overview
+    .number-pairs
+    .value {
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+
+  .exchange-detail .exchangeList-container .table {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table tr {
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail .exchangeList-container .table td {
+    padding: 0.7em;
+  }
+  .exchange-detail .exchangeList-container .table .green-dot {
+    height: 20px;
+    width: 20px;
+    background-color: green;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .red-dot {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .exchange-detail .exchangeList-container .table .yellow-dot {
+    height: 20px;
+    width: 20px;
+    background-color: yellow;
+    border-radius: 50%;
+  }
+  /*------------- */
+
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .news-container-title {
+    padding: 0.5em;
+    background: var(--highlight);
+    width: 8em;
+    color: black;
+    font-weight: 800;
+    font-size: 1em;
+    text-align: center;
+    margin: 0.5em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container {
+    padding: 0.8em;
+    background: var(--dark);
+    margin: 0.7em;
+    border-radius: 15px;
+    width: 60%;
+    border: var(--bright) solid 1pt;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-title {
+    font-weight: 700;
+    border-bottom: var(--brighter) solid 2pt;
+    padding: 0.2em;
+    font-size: 1.2em;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-user {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+  .exchange-detail
+    .exchange-data
+    .exchange-data-container
+    .container2
+    .news-container
+    .status-container
+    .status-description {
+    margin: 1em;
+    border-left: var(--highlight) solid 1pt;
+    padding: 0.5em;
+  }
+}

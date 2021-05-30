@@ -125,17 +125,26 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
         const {id, currency} = this.props;
         const {exchange, loaded, volume} = this.state;
         if(loaded) {
-            return (
-                <>
-                <Jumbotron>
-                    <VolumeChart id={this.props.id} name={exchange.name} title={'Volume over 7 days'} />
-                </Jumbotron>
-                <div>
+            return (  
+                <div className="exchange-detail">
                     <ExchangeCompany name={exchange.name} centralized={exchange.centralized}  image={exchange.image} trustScore={exchange.trust_score} trustScoreRank={exchange.trust_score_rank}/>
-                    <ExchangeTable tickers={exchange.tickers} currency={currency} />
-                    <ExchangeStatusUpdate status_updates={exchange.status_updates} />
+                    <div className="exchange-data">
+                        <div className="exchange-data-container">
+                          <div className="container1">
+                            <Jumbotron>
+                            <VolumeChart id={this.props.id} name={exchange.name} title={'Volume over 7 days'} />
+                            </Jumbotron>
+                          </div>
+                          <div className="container2">
+                            <ExchangeTable tickers={exchange.tickers} currency={currency} />
+                            <ExchangeStatusUpdate status_updates={exchange.status_updates} />
+                          </div>
+                        
+                        </div>
+                    </div>
+                   
                 </div>
-                </>
+                
             )
         }else{
             return (<div>Loading</div>)

@@ -36,17 +36,26 @@ export class ExchangeStatusUpdate extends Component<ExchangeStatusUpdateProps> {
     
     render() {
         const {status_updates} = this.props;
-        return (
-            <div> News:
-                {status_updates.map((status, i) => 
-                    <div className="status-container" key={i+1}>
-                      <div className="status-title">Title:{status.user_title}</div>
-                      <div className="status-user"><div className="user-name">User:{status.user}</div><div className="created-at">Created at:{status.created_at}</div></div>
-                      <div className="status-description">Description:{parse(status.description)}</div>
-                    </div>  
-                  )}
-            </div>
-        )
+        if(status_updates.length != 0)
+            return (
+                <div className="news-container"> 
+                    <div className="news-container-title">Latest News</div>
+                    {status_updates.map((status, i) => 
+                        <div className="status-container" key={i+1}>
+                        <div className="status-title">{status.user_title}</div>
+                        <div className="status-user">
+                            <div className="user-name">wrote by: {status.user} </div>
+                            
+                            <div className="created-at">published by: {new Date(status.created_at).toLocaleString()}</div>
+                        </div>
+                        <div className="status-description">{parse(status.description)}</div>
+                        </div>  
+                    )}
+                </div>
+            )
+        else{
+            return <div></div>
+        }
     }
 }
 
