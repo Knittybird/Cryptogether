@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import ColorNum from './ColorNum'
 import SimpleNum from './SimpleNum'
 import axios from 'axios'
@@ -93,19 +94,27 @@ class CoinList extends Component<CoinListProps, CoinListState> {
           <tbody>
             <tr key={0}>
               <th key={0}>Symbol</th>
-              <th key={1}>Name</th>
+              <th key={1} className="d-none d-sm-table-cell">Name</th>
               <th key={2}>Price</th>
-              <th key={3}>24h change</th>
+              <th key={3}  className="d-none d-md-table-cell">24h change</th>
               <th key={4}>24h change %</th>
               <th key={5}>Volume</th>
-              <th key={6}>Trending</th>
+              <th key={6} className="d-none d-lg-table-cell">Trending</th>
             </tr>
             {coins.map((coin, i) => 
               <tr key={i+1}>
-                <td key={0} className="symbol">{coin.symbol.toUpperCase()}</td>
-                <td key={1}>{coin.name}</td>
+                <td key={0} className="symbol">
+                  <Link to={"/coin/" + coin.id}>
+                    {coin.symbol.toUpperCase()}
+                  </Link>
+                </td>
+                <td key={1} className="d-none d-sm-table-cell">
+                  <Link to={"/coin/" + coin.id}>
+                    {coin.name}
+                  </Link>
+                </td>
                 <td key={2}>{coin.current_price}</td>
-                <td key={3}>
+                <td key={3} className="d-none d-md-table-cell">
                   <ColorNum value={coin.price_change_24h}/>
                 </td>
                 <td key={4}>
@@ -113,7 +122,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                 </td>
                 <td key={5}><SimpleNum value={coin.total_volume} /></td>
                 
-                <td key={6}><SparkLineChart price={coin.sparkline_in_7d.price} /></td>
+                <td key={6} className="d-none d-lg-table-cell"><SparkLineChart price={coin.sparkline_in_7d.price} /></td>
               </tr>
             )}
           </tbody>

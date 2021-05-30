@@ -1,6 +1,7 @@
 .coinList {
   background: var(--dark);
   border-radius: 10px;
+  word-break: break-all;
 }
 
 .coinList th {
@@ -21,4 +22,9 @@
 
 .coinList .symbol {
   font-weight: bold;
+}
+
+.coinList a {
+  color: var(--brighter);
+  text-decoration: none;
 }

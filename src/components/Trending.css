@@ -1,14 +1,17 @@
 .trending {
   display: flex;
   gap: 1em;
-  margin: 0 0 1em 0;
-  overflow-x: hidden;
+  margin: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .trending-coin {
   background: var(--dark);
   border-radius: 10px;
   color: var(--brighter);
+  flex: 1;
+  margin-bottom: 1em;
   position: relative;
   padding: 1em 1em 1.5em 1em;
   text-decoration: none;
