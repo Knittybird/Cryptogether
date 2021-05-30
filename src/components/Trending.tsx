@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 import axios from 'axios'
 import './Trending.css'
+import 'react-perfect-scrollbar/dist/css/styles.css'
 
 const NUM_TRENDING_TO_SHOW = 7
 
@@ -58,18 +60,18 @@ class Trending extends Component<TrendingProps, TrendingState> {
     const { loaded, trending } = this.state
     if (loaded) {
       return (
-        <div className="trending">
-          {trending.slice(0, NUM_TRENDING_TO_SHOW).map((coin, i) =>
-            <Link className="trending-coin" key={i} to={"/coin/" + coin.id}>
-              <img key="image" src={coin.large} alt={coin.name + " logo"}/>
-              <div key="name" className="name">{coin.name}</div>
-              <div key="symbol" className="symbol">{coin.symbol}</div>
-              <div key="price">{coin.price_btc.toFixed(10)} BTC</div>
-              <div key="market-cap"><span className="label">MC rank: </span>{coin.market_cap_rank}</div>
-              <div key="link" className="link">&#8964;</div>
-            </Link>
-          )}
-        </div>
+          <PerfectScrollbar className="trending">
+            {trending.slice(0, NUM_TRENDING_TO_SHOW).map((coin, i) =>
+              <Link className="trending-coin" key={i} to={"/coin/" + coin.id}>
+                <img key="image" src={coin.large} alt={coin.name + " logo"}/>
+                <div key="name" className="name">{coin.name}</div>
+                <div key="symbol" className="symbol">{coin.symbol}</div>
+                <div key="price">{coin.price_btc.toFixed(10)} BTC</div>
+                <div key="market-cap"><span className="label">MC rank: </span>{coin.market_cap_rank}</div>
+                <div key="link" className="link">&#8964;</div>
+              </Link>
+            )}
+          </PerfectScrollbar>
       )
     } else {
       return (
