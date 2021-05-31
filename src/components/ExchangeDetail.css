@@ -217,12 +217,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
@@ -513,12 +507,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
@@ -814,12 +802,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
