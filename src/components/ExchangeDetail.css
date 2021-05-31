@@ -23,7 +23,6 @@
     .company-image
     img {
     width: 5em;
-    border: var(--bright) solid 5pt;
   }
   .exchange-detail
     .container
@@ -121,9 +120,10 @@
   .exchange-detail .exchange-data {
     display: flex;
     flex-wrap: wrap;
+    width: 1;
   }
   .exchange-detail .exchange-data .container1 {
-    width: 50%;
+    width: 100%;
   }
 
   .exchange-detail .exchangeList-container .exchangeList-overview {
@@ -131,7 +131,7 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 100%;
   }
   .exchange-detail
     .exchange-data
@@ -143,7 +143,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -171,7 +170,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -198,7 +196,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -217,12 +214,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
@@ -272,7 +263,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 50%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data
@@ -439,7 +429,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -467,7 +456,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -494,7 +482,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -513,12 +500,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
@@ -568,7 +549,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 80%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data
@@ -621,28 +601,33 @@
   .exchange-detail .container {
     width: 90%;
   }
-  .exchange-detail .company-container {
+  .exchange-detail .container .company-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
   }
-  .exchange-detail .company-container .company-title-container {
+  .exchange-detail .container .company-container .company-title-container {
     display: flex;
     padding: 2em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-image
     img {
     width: 5em;
-    border: var(--bright) solid 5pt;
   }
-  .exchange-detail .company-container .company-title-container .company-title {
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title {
     padding: 1em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-title
@@ -715,14 +700,14 @@
     font-size: 1.8em;
   }
   .exchange-detail .exchange-data {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
   }
   .exchange-detail .exchange-data .exchange-data-container .container1 {
     width: 100%;
   }
-
+  .exchange-detail .exchange-data .exchange-data-container .container2 {
+    width: 100%;
+  }
   .exchange-detail .exchangeList-container .exchangeList-overview {
     display: flex;
     flex-wrap: wrap;
@@ -740,7 +725,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -768,7 +752,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -795,7 +778,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -814,12 +796,6 @@
     font-weight: 800;
   }
 
-  .exchange-detail .exchangeList-container .table {
-    border: var(--bright) solid 1pt;
-  }
-  .exchange-detail .exchangeList-container .table tr {
-    border: var(--bright) solid 1pt;
-  }
   .exchange-detail .exchangeList-container .table td {
     padding: 0.7em;
   }
@@ -869,7 +845,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 60%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data

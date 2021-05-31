@@ -79,26 +79,26 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                 <table className="exchangeList table">
                     <tbody>
                         <tr key={0}>
-                        <th key={0}>#</th>
-                        <th key={1}>Coin</th>
-                        <th key={2}>Pair</th>
-                        <th key={3}>Last Price</th>
-                        <th key={4}>Spread</th>
+                        <th key={0} className="d-none d-sm-table-cell">#</th>
+                        <th key={1} className="text-end">Coin</th>
+                        <th key={2} className="text-end">Pair</th>
+                        <th key={3} className="d-none d-sm-table-cell">Last Price</th>
+                        <th key={4} className="d-none d-sm-table-cell">Spread</th>
                         
-                        <th key={7}>24h Volume</th>
-                        <th key={8}>Last Traded</th>
-                        <th key={9}>Trust Score</th>
+                        <th key={7} className="text-end">24h Volume</th>
+                        <th key={8} className="d-none d-sm-table-cell">Last Traded</th>
+                        <th key={9} className="d-none d-sm-table-cell">Trust Score</th>
                         </tr>
                         {tickers.map((ticker, i) => 
                         <tr key={i+1}>
-                            <td key={0}>{i+1}</td>
-                            <td key={1}><Link className="base-coin" to={"/coin/" + ticker.coin_id}>{ticker.base}</Link></td>
-                            <td key={2}><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
-                            <td key={3}>${ticker.last}</td>
-                            <td key={4}><SimplePercentage value={ticker.bid_ask_spread_percentage} /></td>
-                            <td key={7}>$<SimpleNum value={ticker.converted_volume.usd} /></td>
-                            <td key={8}>{new Date(ticker.last_traded_at).toLocaleString()}</td>
-                            <td key={9}>{
+                            <td key={0} className="d-none d-sm-table-cell">{i+1}</td>
+                            <td key={1} className="text-end"><Link className="base-coin" to={"/coin/" + ticker.coin_id}>{ticker.base}</Link></td>
+                            <td key={2} className="text-end"><a href={ticker.trade_url}>{ticker.base}/{ticker.target}</a></td>
+                            <td key={3} className="d-none d-sm-table-cell">${ticker.last}</td>
+                            <td key={4} className="d-none d-sm-table-cell"><SimplePercentage value={ticker.bid_ask_spread_percentage} /></td>
+                            <td key={7} className="text-end">$<SimpleNum value={ticker.converted_volume.usd} /></td>
+                            <td key={8} className="d-none d-sm-table-cell">{new Date(ticker.last_traded_at).toLocaleString()}</td>
+                            <td key={9} className="d-none d-sm-table-cell">{
                                 ticker.trust_score === 'green' ? <div className="green-dot"></div> :
                                 (ticker.trust_score === 'yellow' ? <div className='yellow-dot'></div> : <div className="red-dot"></div>)
                             }
