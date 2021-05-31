@@ -52,8 +52,6 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
         const data = response.data
         const ids = data.slice(0,3).map(exch => exch.id)
         const names = data.slice(0,3).map(exch => exch.name)
-        console.log(ids)
-        console.log(names)
         this.setState({
           exchanges: data,
           loaded: true,

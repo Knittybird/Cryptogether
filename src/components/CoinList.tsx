@@ -70,7 +70,6 @@ class CoinList extends Component<CoinListProps, CoinListState> {
           coins: data,
           loaded: true
         })
-        console.log(data[0].sparkline_in_7d.price.length)
       })
       .catch((error) => {console.log("Something went wrong. ", error)})
   }
