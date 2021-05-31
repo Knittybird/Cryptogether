@@ -121,9 +121,10 @@
   .exchange-detail .exchange-data {
     display: flex;
     flex-wrap: wrap;
+    width: 1;
   }
   .exchange-detail .exchange-data .container1 {
-    width: 50%;
+    width: 100%;
   }
 
   .exchange-detail .exchangeList-container .exchangeList-overview {
@@ -131,7 +132,7 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 100%;
   }
   .exchange-detail
     .exchange-data
@@ -609,17 +610,18 @@
   .exchange-detail .container {
     width: 90%;
   }
-  .exchange-detail .company-container {
+  .exchange-detail .container .company-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
   }
-  .exchange-detail .company-container .company-title-container {
+  .exchange-detail .container .company-container .company-title-container {
     display: flex;
     padding: 2em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-image
@@ -627,10 +629,15 @@
     width: 5em;
     border: var(--bright) solid 5pt;
   }
-  .exchange-detail .company-container .company-title-container .company-title {
+  .exchange-detail
+    .container
+    .company-container
+    .company-title-container
+    .company-title {
     padding: 1em;
   }
   .exchange-detail
+    .container
     .company-container
     .company-title-container
     .company-title
@@ -703,14 +710,14 @@
     font-size: 1.8em;
   }
   .exchange-detail .exchange-data {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
   }
   .exchange-detail .exchange-data .exchange-data-container .container1 {
     width: 100%;
   }
-
+  .exchange-detail .exchange-data .exchange-data-container .container2 {
+    width: 100%;
+  }
   .exchange-detail .exchangeList-container .exchangeList-overview {
     display: flex;
     flex-wrap: wrap;
