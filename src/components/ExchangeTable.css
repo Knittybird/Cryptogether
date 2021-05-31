@@ -5,7 +5,3 @@
 #trust-score-bad {
   color: #4a1310;
 }
-
-.coinList tr {
-  border-color: var(--neutral);
-}

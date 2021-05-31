@@ -17,18 +17,13 @@ export default function VolumeChart({id, name, title}:VolumeChartProps){
       const url = `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=7`;
       const response = await axios.get(url)
       const v_data = response.data.map((id) => [id[0], parseInt(id[1])])
-
-      console.log(`v_data, ${v_data}`)
-      console.log(`typeof v_data`, typeof v_data)
+      
       setSeries([{data: v_data, name: name}])
 }
   useEffect(() => {
     getVolume(id, name)
     if (title) {
       setTitleState(title)
-    }
-    if (series) {
-      console.log(series.length)
     }
   }, [title])
 
