@@ -102,7 +102,6 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
           ],
           loaded: true,
         });
-        console.log(this.state);
       })
       .catch((error) => {
         console.log("Something went wrong. ", error);

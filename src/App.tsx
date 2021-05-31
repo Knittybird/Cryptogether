@@ -29,7 +29,6 @@ class App extends Component<AppProps, AppState> {
     this.setState({
       currency: currency
     })
-    console.log("Set currency to", currency)
   }
 
   render() {

@@ -25,9 +25,6 @@ export default function VolumeChart({id, name, title}:VolumeChartProps){
     if (title) {
       setTitleState(title)
     }
-    if (series) {
-      console.log(series.length)
-    }
   }, [title])
 
   return (
