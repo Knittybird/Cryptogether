@@ -23,7 +23,6 @@
     .company-image
     img {
     width: 5em;
-    border: var(--bright) solid 5pt;
   }
   .exchange-detail
     .container
@@ -144,7 +143,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -172,7 +170,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -199,7 +196,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -267,7 +263,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 50%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data
@@ -434,7 +429,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -462,7 +456,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -489,7 +482,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -557,7 +549,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 80%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data
@@ -627,7 +618,6 @@
     .company-image
     img {
     width: 5em;
-    border: var(--bright) solid 5pt;
   }
   .exchange-detail
     .container
@@ -735,7 +725,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
 
   .exchange-detail
@@ -763,7 +752,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -790,7 +778,6 @@
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 15pt;
-    border: var(--bright) solid 2pt;
   }
   .exchange-detail
     .exchangeList-container
@@ -858,7 +845,6 @@
     margin: 0.7em;
     border-radius: 15px;
     width: 60%;
-    border: var(--bright) solid 1pt;
   }
   .exchange-detail
     .exchange-data
