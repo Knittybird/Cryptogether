@@ -38,3 +38,12 @@ body {
 .apexcharts-menu {
   color: var(--darker);
 }
+
+footer {
+  background: var(--dark);
+  padding: 0.5em 1em;
+}
+
+.coingecko-image {
+  height: 2em;
+}

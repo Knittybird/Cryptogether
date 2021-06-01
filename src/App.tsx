@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import logo from './images/logo.png'
+import coingecko from './images/coingecko-white-text.png'
 import { Navbar, Nav, NavDropdown, Form, Button, FormControl } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
@@ -66,6 +67,12 @@ class App extends Component<AppProps, AppState> {
             </Route>
           </Switch>
         </BrowserRouter>
+        <footer>
+          Data provided by
+          <a href="https://www.coingecko.com">
+            <img className="coingecko-image" src={coingecko} alt="CoinGecko" />
+          </a>
+        </footer>
       </main>
     );
   }
