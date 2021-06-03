@@ -84,8 +84,8 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                         <th key={4} className="d-none d-sm-table-cell">Spread</th>
                         
                         <th key={7} className="text-end">24h Volume</th>
-                        <th key={8} className="d-none d-sm-table-cell">Last Traded</th>
-                        <th key={9} className="d-none d-sm-table-cell">Trust Score</th>
+                        <th key={8} className="d-none d-lg-table-cell">Last Traded</th>
+                        <th key={9} className="d-none d-md-table-cell">Trust Score</th>
                         </tr>
                         {tickers.map((ticker, i) => 
                         <tr key={i+1}>
@@ -95,8 +95,8 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                             <td key={3} className="d-none d-sm-table-cell">${ticker.last}</td>
                             <td key={4} className="d-none d-sm-table-cell"><SimplePercentage value={ticker.bid_ask_spread_percentage} /></td>
                             <td key={7} className="text-end">$<SimpleNum value={ticker.converted_volume.usd} /></td>
-                            <td key={8} className="d-none d-sm-table-cell">{new Date(ticker.last_traded_at).toLocaleString()}</td>
-                            <td key={9} className="d-none d-sm-table-cell">{
+                            <td key={8} className="d-none d-lg-table-cell">{new Date(ticker.last_traded_at).toLocaleString()}</td>
+                            <td key={9} className="d-none d-md-table-cell">{
                                 ticker.trust_score === 'green' ? <span className="trust-score-green">good</span> :
                                 (ticker.trust_score === 'yellow' ? <span className='trust-score-yellow'>fair</span> : <span className="trust-score-red">poor</span>)                            }
                             </td>
