@@ -1,7 +1,10 @@
-#trust-score-good {
-  color: green;
+.trust-score-green {
+  color: #00dd00;
+}
+.trust-score-yellow {
+  color: yellow;
 }
 
-#trust-score-bad {
-  color: #4a1310;
+.trust-score-red {
+  color: #ff3333;
 }
