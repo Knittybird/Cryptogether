@@ -68,7 +68,7 @@ class Trending extends Component<TrendingProps, TrendingState> {
                 <div key="symbol" className="symbol">{coin.symbol}</div>
                 <div key="price">{coin.price_btc.toFixed(10)} BTC</div>
                 <div key="market-cap"><span className="label">MC rank: </span>{coin.market_cap_rank}</div>
-                <div key="link" className="link">&#8964;</div>
+                <div key="link" className="link">details</div>
               </Link>
             )}
           </PerfectScrollbar>

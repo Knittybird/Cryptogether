@@ -39,7 +39,7 @@ export class ExchangeStatusUpdate extends Component<ExchangeStatusUpdateProps> {
         if(status_updates.length != 0)
             return (
                 <div className="news-container"> 
-                    <h3>Latest News</h3>
+                    <h2>Latest News</h2>
                     {status_updates.map((status, i) => 
                         <div className="status-container" key={i+1}>
                         <div className="status-title">{status.user_title}</div>

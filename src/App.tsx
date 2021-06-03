@@ -40,7 +40,7 @@ class App extends Component<AppProps, AppState> {
           <header className="pl-10">
             <Navbar variant="dark" className="navbar-custom" expand="sm">
               <Navbar.Brand className="ml-10" as={Link} to="/coins">
-                <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether" /> Cryptogether</Navbar.Brand>
+                <img className="d-inline-block align-top" width={30} height={30} src={logo} alt="Cryptogether logo" /> Cryptogether</Navbar.Brand>
               <CurrencySelector currency={currency} selectCurrencyHandler={this.selectCurrencyHandler}/>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">

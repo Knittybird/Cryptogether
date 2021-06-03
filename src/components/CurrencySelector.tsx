@@ -12,8 +12,9 @@ class CurrencySelector extends Component<CurSelProps> {
     const currencies = ['usd', 'jpy', 'eur']
     const { currency, selectCurrencyHandler } = this.props
       return (
-        <form>
-          <select id="currencySelect" className="form-select form-select-sm" name="currency" value={currency} onChange={(e) => selectCurrencyHandler(e.target.value)}>
+        <form className="currency-selection">
+          <label className="label" htmlFor="currency-select-element">Currency selection</label>
+          <select id="currency-select-element" className="form-select form-select-sm" name="currency" value={currency} onChange={(e) => selectCurrencyHandler(e.target.value)}>
             {currencies.map((x, i) => {
               return <option className="currency-item" key={i} value={x}>{x}</option>
             })}
