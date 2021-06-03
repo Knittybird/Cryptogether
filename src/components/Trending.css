@@ -25,16 +25,15 @@
 .trending-coin .link {
   position: absolute;
   bottom: 0;
-  font-size: 2em;
   left: 0;
-  opacity: 0.5;
+  color: var(--bright);
   right: 0;
   width: 100%;
   text-align: center;
 }
 
 .trending-coin .link a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -48,5 +47,5 @@
 }
 
 .trending-coin .symbol {
-  opacity: 0.5;
+  color: var(--bright);
 }

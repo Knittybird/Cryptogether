@@ -40,7 +40,7 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           toolbar:{
             show: false,
           },
-          foreColor: '#8cc8ff'
+          foreColor: '#ffffff'
         },
         grid: {
           borderColor: '#8cc8ff'// bright
@@ -59,14 +59,14 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           type: 'datetime',
           labels: {
             style: {
-              colors: '#8cc8ff'   // bright
+              colors: '#ffffff'   // bright
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#8cc8ff'   // bright
+              colors: '#ffffff'   // bright
             }
           }
         }

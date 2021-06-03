@@ -17,9 +17,9 @@ class Coins extends Component<CoinsProps> {
     
     return (
       <div className="coins">
-        <h3>Trending Coins</h3>
+        <h1>Trending Coins</h1>
         <Trending />
-        <h3>Cryptocurrency List</h3>
+        <h1>Cryptocurrency List</h1>
         <CoinList currency={currency} />
       </div>
     )

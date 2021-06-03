@@ -4,6 +4,7 @@ import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
 import LineChart from './LineChart'
 import { setSyntheticTrailingComments } from "typescript";
+import './ExchangeMultiVolume.css'
 
 interface VolumeChartProps{
   ids: string[],

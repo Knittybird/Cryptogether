@@ -72,7 +72,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
     if (loaded) {
       return (
         <>
-          <h3>Exchanges</h3>
+          <h1>Exchanges</h1>
           <Jumbotron>
               <MultiVolumeChart ids={volume_ids} names = {volume_names} title='Top 3 Exchanges'/>
           </Jumbotron>
@@ -93,7 +93,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
                 <tr key={i}>
                   <td key={0} className="text-center">
                     <Link to={"/exchange/" + exchange.id}>
-                      <img className="exchange-logo" src={exchange.image}/>
+                      <img className="exchange-logo" alt={exchange.name + " logo"} src={exchange.image}/>
                     </Link>
                   </td>
                   <td key={1}>

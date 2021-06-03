@@ -22,8 +22,8 @@ class CoinIcon extends Component<CoinIconProps> {
         const {name, symbol, image} = this.props;
         return (
             <div className="coin-icon-container">
-                <div className="coin-icon-image"> <img src={image} /></div>
-                <div className="coin-icon-name">{name}</div>
+                <div className="coin-icon-image"> <img src={image} alt={name + " logo"}/></div>
+                <h1 className="coin-icon-name">{name}</h1>
                 <div className="coin-icon-symbol">{symbol.toUpperCase()}</div>
                 
             </div>

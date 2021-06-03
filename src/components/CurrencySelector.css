@@ -1,0 +1,22 @@
+.currency-selection .label {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+
+#currency-select-element {
+  width: 60px;
+  background: var(--darker);
+  border: 0;
+  color: var(--brighter);
+  padding: 0.25em 0.5em;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.currency-item {
+  background: var(--darker);
+  border: 1px solid var(--bright);
+  color: var(--brighter);
+}

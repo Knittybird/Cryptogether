@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Chart from "react-apexcharts";
+import React, { Component } from "react"
+import Chart from "react-apexcharts"
 import ApexCharts from "apexcharts"
 import { ApexOptions } from "apexcharts"
-import axios from "axios";
-
+import axios from "axios"
+import './CandleStick.css'
 
 
 /**
@@ -38,7 +38,10 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
         data: []
       }],
       options: {
-        chart: {type:'candlestick'},
+        chart: {
+          type:'candlestick',
+          background: '#000814'
+        },
         title: {
           text: this.props.title,
           align: "left",
@@ -68,14 +71,14 @@ class CoinCandlestick extends Component<CoinCandlestickProps, CandlestickState> 
           type: 'datetime',
           labels: {
             style: {
-              colors: '#d7ecff'  // brighter
+              colors: '#ffffff'  // brighter
             }
           }
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#d7ecff'  // brighter
+              colors: '#ffffff'  // brighter
             }
           }
         }
