@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import Chart from "react-apexcharts";
+import React, { Component } from "react"
+import Chart from "react-apexcharts"
 import ApexCharts from "apexcharts"
 import { ApexOptions } from "apexcharts"
-import axios from "axios";
-
+import axios from "axios"
+import './CandleStick.css'
 
 
 /**
