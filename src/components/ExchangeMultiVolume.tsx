@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
-import ApexCharts from "apexcharts";
-import { ApexOptions } from "apexcharts";
 import LineChart from './LineChart'
-import { setSyntheticTrailingComments } from "typescript";
 import './ExchangeMultiVolume.css'
 
 interface VolumeChartProps{
@@ -30,11 +27,8 @@ export default function MultiVolumeChart({ids, names, title}:VolumeChartProps){
         setLoaded(true)
 }
   useEffect(() => {
-    let volume_series:ApexAxisChartSeries = []
     getVolume(ids, names);
-
-    
-  }, [])
+  }, [ids, names])
 
   if (loaded===true) {
   return (

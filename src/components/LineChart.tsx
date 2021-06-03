@@ -1,7 +1,6 @@
 
-import React, { Component } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
-import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
 
 /**

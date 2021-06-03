@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import logo from './images/logo.png'
 import coingecko from './images/coingecko-white-text.png'
-import { Navbar, Nav, NavDropdown, Form, Button, FormControl } from 'react-bootstrap'
+import { Navbar, Nav} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 import CurrencySelector from './components/CurrencySelector'
@@ -62,7 +62,7 @@ class App extends Component<AppProps, AppState> {
             <Route path="/coin/:id" component={Coin} >
               <Coin currency={currency} />
             </Route>
-            <Route path="/exchange/:id" component={Exchange} >
+            <Route path="/exchange/:id" >
               <Exchange currency={currency} />
             </Route>
           </Switch>

@@ -24,7 +24,7 @@ export class ExchangeCompany extends Component<ExchangeCompanyProps> {
                 <div className="company-container">
                 <div className="company-title-container">
                     <div className="company-image">
-                        <img src={image} alt="binance image" />
+                        <img src={image} alt={name + " logo"} />
                     </div>
                     <div className="company-title">
                         <h1 className="company-name">{name}</h1>

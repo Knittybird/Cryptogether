@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import './ExchangeStatusUpdate.css'
 import parse from 'html-react-parser'
 interface ExchangeStatusUpdateProps{
@@ -36,7 +36,7 @@ export class ExchangeStatusUpdate extends Component<ExchangeStatusUpdateProps> {
     
     render() {
         const {status_updates} = this.props;
-        if(status_updates.length != 0)
+        if(status_updates.length !== 0)
             return (
                 <div className="news-container"> 
                     <h2>Latest News</h2>
@@ -45,7 +45,6 @@ export class ExchangeStatusUpdate extends Component<ExchangeStatusUpdateProps> {
                         <div className="status-title">{status.user_title}</div>
                         <div className="status-user">
                             <div className="user-name">wrote by: {status.user} </div>
-                            
                             <div className="created-at">published by: {new Date(status.created_at).toLocaleString()}</div>
                         </div>
                         <div className="status-description">{parse(status.description)}</div>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import SimpleNumber from './SimpleNum'
 import SimpleNum from './SimpleNum';
 import SimplePercentage from './SimplePercentage'
 interface CoinMetricsProps {
@@ -75,8 +74,8 @@ export class CoinMetrics extends Component<CoinMetricsProps,CoinMetricsState> {
         }
       }
     render() {
-        const {id, currency} = this.props;
-        const {loaded, coin} = this.state;
+        const {currency} = this.props;
+        const {coin} = this.state;
         switch(currency){
           case 'usd':
             return (

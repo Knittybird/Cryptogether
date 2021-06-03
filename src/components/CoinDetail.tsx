@@ -44,7 +44,7 @@ export class CoinDetail extends Component<CoinDetailProps,CoinState> {
         }
     }
     loadData = () => {
-        const {id,currency} = this.props;
+        const {id} = this.props;
         const url = `https://api.coingecko.com/api/v3/coins/${id}`;
         
         axios.get(url)
@@ -70,7 +70,7 @@ export class CoinDetail extends Component<CoinDetailProps,CoinState> {
       
     render() 
     {
-        const {loaded, coin} = this.state;
+        const {coin} = this.state;
         const {id, currency} = this.props;
 
         if (coin.image){

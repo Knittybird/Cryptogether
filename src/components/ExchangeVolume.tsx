@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
-import ApexCharts from "apexcharts";
-import { ApexOptions } from "apexcharts";
 import LineChart from './LineChart'
-import { setSyntheticTrailingComments } from "typescript";
 
 interface VolumeChartProps{
   id: string
@@ -25,7 +22,7 @@ export default function VolumeChart({id, name, title}:VolumeChartProps){
     if (title) {
       setTitleState(title)
     }
-  }, [title])
+  }, [title, id, name])
 
   return (
     <>

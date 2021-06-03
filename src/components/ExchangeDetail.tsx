@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import axios from 'axios'
 import ExchangeCompany from './ExchangeCompany';
 import ExchangeTable from './ExchangeTable';
 import ExchangeStatusUpdate from './ExchangeStatusUpdate'
-import { getLineAndCharacterOfPosition } from 'typescript';
 import VolumeChart from './ExchangeVolume';
-import ApexCharts from "apexcharts";
 import { Jumbotron } from 'react-bootstrap';
 
 const NUM_PER_PAGE = 50
@@ -95,9 +93,8 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
     }
     
     loadData = () => {
-        const {id,currency} = this.props;
+        const {id} = this.props;
         const url = `https://api.coingecko.com/api/v3/exchanges/${id}?per_page=${NUM_PER_PAGE}`;
-        const volume_url = `https://api.coingecko.com/api/v3/exchanges/${id}/volume_chart?days=7`;
         
         axios.get(url)
           .then(response => {
@@ -122,8 +119,8 @@ export class ExchangeDetail extends Component<ExchangeDetailProps,ExchangeDetail
       }
 
     render() {
-        const {id, currency} = this.props;
-        const {exchange, loaded, volume} = this.state;
+        const {currency} = this.props;
+        const {exchange, loaded} = this.state;
         if(loaded) {
             return (  
                 <div className="exchange-detail">
