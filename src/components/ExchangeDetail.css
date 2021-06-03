@@ -262,7 +262,6 @@
     background: var(--dark);
     margin: 0.7em;
     border-radius: 15px;
-    width: 50%;
   }
   .exchange-detail
     .exchange-data
@@ -549,7 +548,6 @@
     background: var(--dark);
     margin: 0.7em;
     border-radius: 15px;
-    width: 80%;
   }
   .exchange-detail
     .exchange-data
@@ -845,7 +843,6 @@
     background: var(--dark);
     margin: 0.7em;
     border-radius: 15px;
-    width: 60%;
   }
   .exchange-detail
     .exchange-data
@@ -883,4 +880,8 @@
     border-left: var(--highlight) solid 1pt;
     padding: 0.5em;
   }
+}
+
+.status-container {
+  max-width: 40em;
 }
