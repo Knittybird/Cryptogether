@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import SimpleNum from './SimpleNum'
 import axios from 'axios'
 import './ExchangeList.css'
 import { Jumbotron } from 'react-bootstrap';
@@ -74,7 +73,7 @@ class ExchangeList extends Component<ExchangeListProps, ExchangeListState> {
         <>
           <h1>Exchanges</h1>
           <Jumbotron>
-              <MultiVolumeChart ids={volume_ids} names = {volume_names} title='Top 3 Exchanges'/>
+              <MultiVolumeChart ids={volume_ids} names={volume_names} title='Top 3 Exchanges'/>
           </Jumbotron>
           <table className="exchangeList table">
             <tbody>

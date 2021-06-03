@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { Link } from 'react-router-dom';
-
-import axios from 'axios'
 import SimpleNum from './SimpleNum';
 import SimplePercentage from './SimplePercentage';
 
-const NUM_PER_PAGE = 50
 interface ExchangeTableProps{
     tickers: Ticker[],
     currency: string
@@ -48,7 +45,7 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
     
     render() {
         
-        const {tickers, currency } = this.props;
+        const {tickers} = this.props;
         let totalTradingVolum = 0
         let totalPairs = 0
         let coinList = [] as string[]

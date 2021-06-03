@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import {RouteComponentProps, withRouter} from 'react-router'
-import axios from 'axios';
-import CurrencySelector from './CurrencySelector';
-import CoinDetail from './CoinDetail'
 import ExchangeDetail from './ExchangeDetail';
 import './ExchangeDetail.css'
 
@@ -16,10 +13,6 @@ type ComposedProps = Props & RouteComponentProps<{
 
 
 class Exchange extends Component<ComposedProps> {
-  constructor(props) {
-    super(props)
-    
-  }
   render() {
     const {id} = this.props.match.params;
     const {currency} = this.props;

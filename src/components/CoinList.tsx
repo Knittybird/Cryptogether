@@ -88,9 +88,9 @@ class CoinList extends Component<CoinListProps, CoinListState> {
     const { currency } = this.props
     const { loaded, coins } = this.state
     let currencySymbol = '$'
-    if (currency == 'jpy') {
+    if (currency === 'jpy') {
       currencySymbol = '¥'
-    } else if (currency == 'eur') {
+    } else if (currency === 'eur') {
       currencySymbol = '€'
     }
     if (loaded) {

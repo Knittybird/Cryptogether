@@ -8,10 +8,6 @@ interface CoinsProps {
 }
 
 class Coins extends Component<CoinsProps> {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const { currency } = this.props
     

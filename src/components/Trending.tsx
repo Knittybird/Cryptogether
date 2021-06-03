@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 import axios from 'axios'
 import './Trending.css'

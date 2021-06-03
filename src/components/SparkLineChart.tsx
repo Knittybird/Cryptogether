@@ -1,7 +1,6 @@
 
-import React, { Component } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
-import ApexCharts from "apexcharts";
 import { ApexOptions } from "apexcharts";
 import './SparkLineChart.css'
 
@@ -9,8 +8,6 @@ import './SparkLineChart.css'
  * SparkLineChart: Trending or Spark Line Chart Component 
  * Props:  price <number[]> list of trending numbers
  */
-
-
 
 interface SparkLineChartProps{
   price: number[]

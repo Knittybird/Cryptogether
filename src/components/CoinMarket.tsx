@@ -77,8 +77,8 @@ export class CoinMarket extends Component<CoinMarketProps,CoinMarketState> {
       }
     render() {
         
-        const {id, currency} = this.props;
-        const {loaded, coin} = this.state;
+        const {currency} = this.props;
+        const {coin} = this.state;
 
         switch(currency){
           case 'usd':{

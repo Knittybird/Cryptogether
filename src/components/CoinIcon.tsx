@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import {RouteComponentProps} from 'react-router'
-import {Img} from 'react-image'
-import axios from 'axios';
 import './CoinDetail.css'
 interface CoinIconProps{
     name : string;
@@ -11,13 +8,6 @@ interface CoinIconProps{
 }
 
 class CoinIcon extends Component<CoinIconProps> {
-    constructor(props) {
-        super(props)
-    
-    }
-    
-    
-      
     render() {
         const {name, symbol, image} = this.props;
         return (
