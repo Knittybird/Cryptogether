@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom';
 import SimpleNum from './SimpleNum';
 import SimplePercentage from './SimplePercentage';
+import './ExchangeTable.css'
 
 interface ExchangeTableProps{
     tickers: Ticker[],
@@ -96,9 +97,8 @@ export class ExchangeTable extends Component<ExchangeTableProps> {
                             <td key={7} className="text-end">$<SimpleNum value={ticker.converted_volume.usd} /></td>
                             <td key={8} className="d-none d-sm-table-cell">{new Date(ticker.last_traded_at).toLocaleString()}</td>
                             <td key={9} className="d-none d-sm-table-cell">{
-                                ticker.trust_score === 'green' ? <div className="green-dot"></div> :
-                                (ticker.trust_score === 'yellow' ? <div className='yellow-dot'></div> : <div className="red-dot"></div>)
-                            }
+                                ticker.trust_score === 'green' ? <span className="trust-score-green">good</span> :
+                                (ticker.trust_score === 'yellow' ? <span className='trust-score-yellow'>fair</span> : <span className="trust-score-red">poor</span>)                            }
                             </td>
                         </tr>
                         )}
