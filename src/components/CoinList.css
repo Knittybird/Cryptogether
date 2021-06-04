@@ -4,16 +4,18 @@
 }
 
 .coinList th {
+  border-bottom: 1px solid var(--neutral);
   color: var(--bright);
 }
 
 .coinList td {
+  border: none;
   color: var(--brighter);
   word-break: break-all;
 }
 
-.coinList tr {
-  border-color: var(--neutral);
+.coinList tr + tr {
+  border-top: 1px solid var(--neutral);
 }
 
 .coinList tr:hover {
