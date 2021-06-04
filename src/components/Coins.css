@@ -1,3 +1,30 @@
 .coins {
   padding: 1em;
 }
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.page-button {
+  background: var(--dark);
+  border: none;
+  border-radius: 10px;
+  color: var(--brighter);
+}
+
+.page-button:hover {
+  background: var(--neutral);
+}
+
+.previous-button {
+  border-right: 1px solid var(--neutral);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.next-button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

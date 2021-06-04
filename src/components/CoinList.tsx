@@ -10,6 +10,7 @@ const NUM_PER_PAGE = 50
 
 interface CoinListProps {
   currency: string
+  page: number
 }
 
 interface Sparkline {
@@ -62,7 +63,7 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   loadData = () => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=${NUM_PER_PAGE}&sparkline=true`
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${this.props.currency}&per_page=${NUM_PER_PAGE}&page=${this.props.page}&sparkline=true`
     axios.get(url)
       .then(response => {
         const data = response.data
@@ -79,7 +80,8 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   }
 
   componentDidUpdate(prevProps, prevState) {    
-    if (prevProps.currency !== this.props.currency) {
+    if (prevProps.currency !== this.props.currency
+      || prevProps.page !== this.props.page) {
       this.loadData()
     }
   }
@@ -87,6 +89,9 @@ class CoinList extends Component<CoinListProps, CoinListState> {
   render() {
     const { currency } = this.props
     const { loaded, coins } = this.state
+    if (loaded && coins.length == 0) {
+      return <div className="loading"><h2>No more results</h2></div>
+    }
     let currencySymbol = '$'
     if (currency === 'jpy') {
       currencySymbol = '¥'
@@ -120,10 +125,10 @@ class CoinList extends Component<CoinListProps, CoinListState> {
                 </td>
                 <td key={2} className="text-end">{currencySymbol + coin.current_price.toFixed(2)}</td>
                 <td key={3} className="d-none d-md-table-cell text-end">
-                  <ColorNum value={coin.price_change_24h.toFixed(2)}/>
+                  <ColorNum value={coin.price_change_24h ? coin.price_change_24h.toFixed(2): ''}/>
                 </td>
                 <td key={4} className="text-end">
-                  <ColorNum value={coin.price_change_percentage_24h.toFixed(2)} suffix="%" />
+                  <ColorNum value={coin.price_change_percentage_24h ? coin.price_change_percentage_24h.toFixed(2) : ''} suffix="%" />
                 </td>
                 <td key={5} className="text-end"><SimpleNum value={coin.total_volume} prefix={currencySymbol}/></td>
                 
