@@ -66,7 +66,11 @@
     font-size: 1em;
     text-align: center;
   }
-  .exchange-detail .container .company-container .company-trust-score .line {
+  .exchange-detail
+    .container
+    .company-container
+    .company-trust-score
+    .line {
     border-right: var(--bright) solid 1pt;
     padding: 0.3em;
   }
@@ -328,7 +332,10 @@
     width: 5em;
     border: var(--bright) solid 5pt;
   }
-  .exchange-detail .company-container .company-title-container .company-title {
+  .exchange-detail
+    .company-container
+    .company-title-container
+    .company-title {
     padding: 1em;
   }
   .exchange-detail

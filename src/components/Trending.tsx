@@ -7,25 +7,24 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 
 const NUM_TRENDING_TO_SHOW = 7
 
-interface TrendingProps {
-}
+interface TrendingProps {}
 
 interface TrendingCoin {
-  id: string,
-  coin_id: number,
-  name: string,
-  symbol: string,
-  market_cap_rank: number,
-  thumb: string,
-  small: string,
-  large: string,
-  slug: string,
-  price_btc: number,
+  id: string
+  coin_id: number
+  name: string
+  symbol: string
+  market_cap_rank: number
+  thumb: string
+  small: string
+  large: string
+  slug: string
+  price_btc: number
   score: number
 }
 
 interface TrendingState {
-  trending: TrendingCoin[],
+  trending: TrendingCoin[]
   loaded: boolean
 }
 class Trending extends Component<TrendingProps, TrendingState> {
@@ -35,24 +34,26 @@ class Trending extends Component<TrendingProps, TrendingState> {
       trending: [],
       loaded: false,
     }
-
   }
 
   loadData = () => {
     const url = `https://api.coingecko.com/api/v3/search/trending`
-    axios.get(url)
-      .then(response => {
+    axios
+      .get(url)
+      .then((response) => {
         const coins = response.data.coins
-        const formattedList = coins.map(coin => coin.item)
+        const formattedList = coins.map((coin) => coin.item)
         this.setState({
           trending: formattedList,
-          loaded: true
+          loaded: true,
         })
       })
-      .catch((error) => {console.log("Something went wrong. ", error)})
+      .catch((error) => {
+        console.log('Something went wrong. ', error)
+      })
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     this.loadData()
   }
 
@@ -60,23 +61,32 @@ class Trending extends Component<TrendingProps, TrendingState> {
     const { loaded, trending } = this.state
     if (loaded) {
       return (
-          <PerfectScrollbar className="trending">
-            {trending.slice(0, NUM_TRENDING_TO_SHOW).map((coin, i) =>
-              <Link className="trending-coin" key={i} to={"/coin/" + coin.id}>
-                <img key="image" src={coin.large} alt={coin.name + " logo"}/>
-                <div key="name" className="name">{coin.name}</div>
-                <div key="symbol" className="symbol">{coin.symbol}</div>
-                <div key="price">{coin.price_btc.toFixed(10)} BTC</div>
-                <div key="market-cap"><span className="label">MC rank: </span>{coin.market_cap_rank}</div>
-                <div key="link" className="link">details</div>
-              </Link>
-            )}
-          </PerfectScrollbar>
+        <PerfectScrollbar className='trending'>
+          {trending.slice(0, NUM_TRENDING_TO_SHOW).map((coin, i) => (
+            <Link className='trending-coin' key={i} to={'/coin/' + coin.id}>
+              <img key='image' src={coin.large} alt={coin.name + ' logo'} />
+              <div key='name' className='name'>
+                {coin.name}
+              </div>
+              <div key='symbol' className='symbol'>
+                {coin.symbol}
+              </div>
+              <div key='price'>{coin.price_btc.toFixed(10)} BTC</div>
+              <div key='market-cap'>
+                <span className='label'>MC rank: </span>
+                {coin.market_cap_rank}
+              </div>
+              <div key='link' className='link'>
+                details
+              </div>
+            </Link>
+          ))}
+        </PerfectScrollbar>
       )
     } else {
       return (
-        <div className="trending">
-          <div className="loading">
+        <div className='trending'>
+          <div className='loading'>
             <h2>Loading</h2>
           </div>
         </div>

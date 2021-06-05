@@ -10,9 +10,9 @@ interface CoinsProps {
 class Coins extends Component<CoinsProps> {
   render() {
     const { currency } = this.props
-    
+
     return (
-      <div className="coins">
+      <div className='coins'>
         <h1>Trending Coins</h1>
         <Trending />
         <h1>Cryptocurrency List</h1>
