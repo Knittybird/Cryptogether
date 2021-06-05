@@ -1,32 +1,33 @@
-
-import React from "react";
-import Chart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
+import React, { Component } from 'react'
+import Chart from 'react-apexcharts'
+import { ApexOptions } from 'apexcharts'
 import './SparkLineChart.css'
 
 /**
- * SparkLineChart: Trending or Spark Line Chart Component 
+ * SparkLineChart: Trending or Spark Line Chart Component
  * Props:  price <number[]> list of trending numbers
  */
 
-interface SparkLineChartProps{
+interface SparkLineChartProps {
   price: number[]
   title?: string
 }
 
 type SparkLineChartState = {
-  series: ApexAxisChartSeries,
+  series: ApexAxisChartSeries
   options: ApexOptions
 }
 
-
-class SparkLineChart extends React.Component<SparkLineChartProps, SparkLineChartState> {
+class SparkLineChart extends Component<
+  SparkLineChartProps,
+  SparkLineChartState
+> {
   constructor(props) {
-    super(props);
+    super(props)
 
-    const stepsize = Math.floor(this.props.price.length/7)
-    let price:number[] = [];
-    for (let i=0; i < this.props.price.length; i=i+stepsize){
+    const stepsize = Math.floor(this.props.price.length / 7)
+    let price: number[] = []
+    for (let i = 0; i < this.props.price.length; i = i + stepsize) {
       price.push(this.props.price[i])
     }
 
@@ -37,51 +38,54 @@ class SparkLineChart extends React.Component<SparkLineChartProps, SparkLineChart
           width: 100,
           height: 35,
           sparkline: {
-            enabled: true
-          }
+            enabled: true,
+          },
         },
-        colors:['#ffc300'],
+        colors: ['#ffc300'],
         stroke: {
-          curve: 'smooth'
+          curve: 'smooth',
         },
         tooltip: {
           fixed: {
-            enabled: false
+            enabled: false,
           },
           x: {
-            show: false
+            show: false,
           },
           y: {
             title: {
               formatter: function (seriesName) {
                 return ''
-              }
-            }
+              },
+            },
           },
           theme: 'dark',
           marker: {
-            show: false
-          }
-        }
+            show: false,
+          },
+        },
       },
-      series: [{
-        data: price,
-      }]
-    }
-    };
-
-  
-
-    render() {
-      return (
-
-        <div className="sparkline-chart text-center">
-          <Chart options={this.state.options} 
-            series={this.state.series} type="line" height={35} width={100}
-          />
-        </div>
-      );
+      series: [
+        {
+          data: price,
+        },
+      ],
     }
   }
 
-  export default SparkLineChart
+  render() {
+    return (
+      <div className='sparkline-chart text-center'>
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type='line'
+          height={35}
+          width={100}
+        />
+      </div>
+    )
+  }
+}
+
+export default SparkLineChart

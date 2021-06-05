@@ -5,7 +5,7 @@ import './Exchanges.css'
 class Exchanges extends Component {
   render() {
     return (
-      <div className="exchanges">
+      <div className='exchanges'>
         <ExchangeList />
       </div>
     )

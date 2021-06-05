@@ -1,7 +1,6 @@
-
-import React from "react";
-import Chart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
+import React from 'react'
+import Chart from 'react-apexcharts'
+import { ApexOptions } from 'apexcharts'
 
 /**
  * LineChart: Line Chart Component
@@ -11,22 +10,19 @@ import { ApexOptions } from "apexcharts";
  *         title <string>   Optional default is no title displayed
  */
 
-
-
-interface LineChartProps{
+interface LineChartProps {
   series: ApexAxisChartSeries
   title?: string
 }
 
 type LineChartState = {
-  series: ApexAxisChartSeries,
+  series: ApexAxisChartSeries
   options: ApexOptions
 }
 
-
 class LineChart extends React.Component<LineChartProps, LineChartState> {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       options: {
@@ -34,58 +30,58 @@ class LineChart extends React.Component<LineChartProps, LineChartState> {
           height: 350,
           type: 'line',
           zoom: {
-            enabled: false
+            enabled: false,
           },
-          toolbar:{
+          toolbar: {
             show: false,
           },
-          foreColor: '#ffffff'
+          foreColor: '#ffffff',
         },
         grid: {
-          borderColor: '#8cc8ff'// bright
+          borderColor: '#8cc8ff', // bright
         },
         title: {
           text: this.props.title,
           align: 'left',
           style: {
-            color: '#d7ecff'   // brighter
+            color: '#d7ecff', // brighter
           },
         },
         tooltip: {
-          theme: 'dark'
+          theme: 'dark',
         },
         xaxis: {
           type: 'datetime',
           labels: {
             style: {
-              colors: '#ffffff'   // bright
-            }
-          }
+              colors: '#ffffff', // bright
+            },
+          },
         },
         yaxis: {
           labels: {
             style: {
-              colors: '#ffffff'   // bright
-            }
-          }
-        }
+              colors: '#ffffff', // bright
+            },
+          },
+        },
       },
-      series: this.props.series
-    }
-    };
-
-  
-
-    render() {
-      return (
-
-        <div id="chart">
-          <Chart options={this.state.options} 
-            series={this.state.series} type="line" height={350} 
-          />
-        </div>
-      );
+      series: this.props.series,
     }
   }
 
-  export default LineChart
+  render() {
+    return (
+      <div id='chart'>
+        <Chart
+          options={this.state.options}
+          series={this.state.series}
+          type='line'
+          height={350}
+        />
+      </div>
+    )
+  }
+}
+
+export default LineChart
