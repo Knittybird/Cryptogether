@@ -1,0 +1,49 @@
+:root {
+  --darker: #000814;
+  --dark: #001d3d;
+  --neutral: #003566;
+  --bright: #8cc8ff;
+  --brighter: #d7ecff;
+  --highlight: #ffc300;
+}
+
+body {
+  background: var(--darker);
+  color: var(--brighter);
+}
+
+.navbar {
+  background: var(--dark);
+
+  padding: 0.25em 0.5em;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: var(--brighter);
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: var(--highlight);
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: var(--brighter);
+}
+
+.navbar-custom .navbar-nav .nav-link:hover {
+  color: var(--highlight);
+}
+
+.apexcharts-menu {
+  color: var(--darker);
+}
+
+footer {
+  background: var(--dark);
+  padding: 0.5em 1em;
+}
+
+.coingecko-image {
+  height: 2em;
+}

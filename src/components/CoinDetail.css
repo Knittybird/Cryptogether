@@ -1,0 +1,388 @@
+@media (max-width: 768px) {
+  .coin-detail-container {
+    font-size: 16px;
+  }
+  .coin-icon-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 1.5em;
+
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.5em;
+  }
+
+  .coin-icon-container .coin-icon-image {
+    padding-left: 0.5em;
+  }
+  .coin-icon-container .coin-icon-name {
+    font-weight: 700;
+    font-size: 1.4em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    align-self: flex-end;
+  }
+  .coin-icon-container .coin-icon-symbol {
+    align-self: flex-end;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    padding-top: 0.4em;
+  }
+  .coin-icon-container .coin-icon-image img {
+    width: 2em;
+  }
+  .coin-market {
+    padding: 1em;
+  }
+  .coin-market .coin-market-title {
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-market-container {
+    font-size: 16px;
+    padding: 1em;
+
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--dark);
+    border-radius: 30pt;
+    justify-content: center;
+  }
+
+  .coin-market-container .price {
+    padding: 1em;
+    margin: 0.4em;
+
+    border-radius: 15pt;
+    text-align: center;
+    border-bottom: var(--bright) solid 1pt;
+  }
+  .coin-market-container .market-cap {
+    padding: 1em;
+
+    margin: 0.4em;
+    border-radius: 15pt;
+    text-align: center;
+    border-bottom: var(--bright) solid 1pt;
+  }
+  .coin-market-container .h-change {
+    padding: 1em;
+
+    margin: 0.4em;
+    border-radius: 15pt;
+    text-align: center;
+    border-bottom: var(--bright) solid 1pt;
+  }
+  .coin-market-container .volume {
+    padding: 1em;
+
+    margin: 0.4em;
+
+    text-align: center;
+    border-radius: 15pt;
+    border-bottom: var(--bright) solid 1pt;
+  }
+
+  .coin-market-container .value {
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+  .coin-key-metrics {
+    padding: 1em;
+  }
+
+  .coin-key-metrics .metrics-title {
+    /* border-bottom: var(--bright) solid 1pt; */
+    padding-bottom: 0.8em;
+    padding-top: 0.6em;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-key-metrics .metrics-container {
+    background: var(--dark);
+    border-radius: 15pt;
+  }
+  .coin-key-metrics .metrics-container table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .coin-key-metrics .metrics-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+  .coin-key-metrics .metrics-container .value {
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+  .coin-key-metrics .metrics-container .h-high {
+    background-color: var(--dark);
+    padding: 1.3em;
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+    text-align: center;
+    border-bottom: var(--bright) solid 1pt;
+  }
+  .coin-key-metrics .metrics-container .h-low {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    border-bottom: var(--bright) solid 1pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .net-change {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    border-bottom: var(--bright) solid 1pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .ath {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    border-bottom: var(--bright) solid 1pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .atl {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    border-bottom: var(--bright) solid 1pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .return {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    border-bottom: var(--bright) solid 1pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .supply {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-bottom: var(--bright) solid 1pt;
+    border-radius: 10pt;
+    align-content: center;
+  }
+
+  .coin-description-container {
+    padding: 1em;
+  }
+  .coin-description-container .title {
+    border-bottom: var(--brighter) solid 1pt;
+    padding-bottom: 0.7em;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-description-container .content {
+    padding: 0.3em;
+    font-size: 1.2em;
+    background: var(--dark);
+  }
+  .candlestick {
+    padding: 0.4em;
+  }
+}
+
+@media (min-width: 768px) {
+  .coinView {
+    display: flex;
+    justify-content: center;
+  }
+  .coin-detail-container {
+    font-size: 16px;
+    width: 80%;
+    align-items: center;
+  }
+  .coin-icon-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    font-size: 1.5em;
+
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    padding-left: 1.6em;
+  }
+
+  .coin-icon-container .coin-icon-image {
+    padding-left: 0.5em;
+  }
+  .coin-icon-container .coin-icon-name {
+    font-weight: 700;
+    font-size: 1.4em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    align-self: flex-end;
+  }
+  .coin-icon-container .coin-icon-symbol {
+    align-self: flex-end;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    padding-top: 0.4em;
+  }
+  .coin-icon-container .coin-icon-image img {
+    width: 3em;
+  }
+  .coin-market {
+    padding: 1em;
+  }
+  .coin-market .coin-market-title {
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-market-container {
+    font-size: 16px;
+    display: flex;
+    padding: 1em;
+    align-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .coin-market-container .price {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-market-container .market-cap {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-market-container .h-change {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-market-container .volume {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-market-container .container2 {
+    width: 50%;
+  }
+  .coin-market-container .value {
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+  .coin-key-metrics {
+    padding: 1em;
+    width: fit-content;
+  }
+
+  .coin-key-metrics .metrics-title {
+    border-bottom: var(--bright) solid 1pt;
+    padding-bottom: 0.8em;
+    padding-top: 0.6em;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-key-metrics .metrics-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .coin-key-metrics .metrics-container .value {
+    font-weight: 800;
+    font-size: 1.5em;
+  }
+  .coin-key-metrics .metrics-container .h-high {
+    background-color: var(--dark);
+    padding: 1.3em;
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+    display: block;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+  .coin-key-metrics .metrics-container .h-low {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .net-change {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .ath {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .atl {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .return {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-key-metrics .metrics-container .supply {
+    padding: 1.3em;
+    background-color: var(--dark);
+    margin: 1.3em;
+    border-radius: 10pt;
+    align-content: center;
+  }
+  .coin-description-container {
+    padding: 1em;
+  }
+  .coin-description-container .title {
+    border-bottom: var(--brighter) solid 1pt;
+    padding-bottom: 0.7em;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  .coin-description-container .content {
+    padding: 0.7em;
+    font-size: 1.2em;
+    background: var(--dark);
+  }
+  .candlestick {
+    padding: 1em;
+  }
+}
+
+.coin-detail-container .content a {
+  color: var(--highlight);
+}

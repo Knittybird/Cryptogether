@@ -1,0 +1,9 @@
+.apexcharts-xaxis-label {
+  color: white;
+  background: var(--darker);
+}
+
+.apexcharts-yaxis-label {
+  color: white;
+  background: var(--darker);
+}
